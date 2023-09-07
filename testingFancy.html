@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Icon Animation</title>
+    <style>
+        /* Styling for the container and SVG */
+        .icon-container {
+            width: 100px;
+            /* Set the desired size for the icon */
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            /* Initially hidden */
+            transition: opacity 1s ease-in-out;
+            /* Animation duration */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-container">
+        <!-- Embed your SVG file here -->
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <!-- Your SVG content goes here -->
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+        </svg>
+    </div>
+
+    <script>
+        // JavaScript to trigger the animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon = document.querySelector('.icon');
+
+            // Delay the animation start (you can adjust this)
+            setTimeout(() => {
+                // Fade in the icon
+                icon.style.opacity = '1';
+
+                // Delay the fade-out (2 seconds in this example)
+                setTimeout(() => {
+                    // Fade out the icon
+                    icon.style.opacity = '0';
+
+                    // After the fade-out, set opacity to 1 (image stays on screen)
+                    setTimeout(() => {
+                        icon.style.opacity = '1';
+                    }, 1000); // Delay for 1 second after fade-out
+                }, 2000); // Delay for 2 seconds before fade-out
+            }, 1000); // Delay for 1 second before starting the animation
+        });
+    </script>
+</body>
+
+</html>

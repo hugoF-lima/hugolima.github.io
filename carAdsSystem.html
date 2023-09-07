@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body onload="switchLang('en', ProjectDescrContent)">
+    <header>
+        <h1 id="name"></h1>
+        <p id="introduction"></p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
+            <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
+            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+        </div>
+        <p id="moreInfo" class="icon-text"> </p>
+    </header>
+
+    <main>
+        <div class="item-about">
+            <h2>Car Ad System (Work in Progress)</h2>
+            <div class="image-container-exp slideshow">
+                <img src="srcImgs/image1_car_sales.png" alt="Profile Image">
+                <img src="srcImgs/image1_car_sales.png" alt="Profile Image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+                <p id="carSystemDesc"> </p>
+                <p id="carSystemRepo"> </p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer id="footernote">&copy; </footer>>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Assuming you want the first li element to be active by default
+            $('.dots li:first-child').addClass('active');
+            // Add click event listener to the li elements
+            $('.dots li').click(function (event) {
+                // Prevent the default anchor tag behavior (preventing the page from scrolling)
+                event.preventDefault();
+
+                // Remove the "active" class from all li elements
+                $('.dots li').removeClass('active');
+                // Add the "active" class to the clicked li element
+                $(this).addClass('active');
+            });
+        });
+
+    </script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

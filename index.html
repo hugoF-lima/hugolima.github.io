@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body onload="switchLang('en', homeLangContent)">
+    <header>
+        <h1 id="name"></h1>
+        <p id="introduction"></p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="switchLang('pt-br', homeLangContent)">PT-BR</button>
+            <button class="language-button" onclick="switchLang('en', homeLangContent)">EN</button>
+            <button class="language-button" onclick="switchLang('jp', homeLangContent)">JP</button>
+        </div>
+        <p id="moreInfo" class="smaller-text" onclick="openProjectPage('aboutMePage.html')"> </p>
+    </header>
+
+    <div class="container">
+        <div class="item">
+            <h2 id="project1" onclick="openProjectPage('xmlReaderProject.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_xmlreader.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image2_xmlreader.png" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project1-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project1desc">Description of project 1 goes here.</p>
+        </div>
+
+        <div class="item">
+            <h2 id="project2" onclick="openProjectPage('kanjiQuizProject.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_kanjiquiz.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image2_kanjiquiz.png" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project2-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project2desc"></p>
+        </div>
+        <!-- ... (other items) -->
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <h2 id="project3" onclick="openProjectPage('bookStoreSystem.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/01-Login.PNG" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/04-Tela Principal (aba Funcionario).png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/07-Tela Principal (aba Livros).png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/08-Tela Principal (aba Contatos Online).png" alt="Project 1 Image" ,
+                    class="slide-image">
+                <img src="srcImgs/09-Cadastro_Cliente.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/12-RelatorioFuncionario.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/18-Pedido_Info.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/19-CupomVenda.png" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project3-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">3</a></li>
+                        <li class="slide-button" data-index="3"><a href="#">4</a></li>
+                        <li class="slide-button" data-index="4"><a href="#">5</a></li>
+                        <li class="slide-button" data-index="5"><a href="#">6</a></li>
+                        <li class="slide-button" data-index="6"><a href="#">7</a></li>
+                        <li class="slide-button" data-index="7"><a href="#">8</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project3desc">Description of project 1 goes here.</p>
+        </div>
+
+        <div class="item">
+            <h2 id="project4" onclick="openProjectPage('carAdsSystem.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_car_sales.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image1_car_sales.png" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project4-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project4desc"></p>
+        </div>
+        <!-- ... (other items) -->
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <h2 id="project5" onclick="openProjectPage('outlookExtractor.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_outlook_extractor.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image1_outlook_extractor.png" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project5-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project5desc">Description of project 1 goes here.</p>
+        </div>
+
+        <div class="item">
+            <h2 id="project6" onclick="openProjectPage('recupStProject.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_recup_st_reader.jpg" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image2_recup_st_reader.jpg" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots  project6-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project6desc"></p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <h2 id="project7" onclick="openProjectPage('jpTyperQt.html')"></h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_jp_typer.jpg" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image2_jp_typer.jpg" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image3_jp_typer.jpg" alt="Project 1 Image" , class="slide-image">
+                <!-- Add more images for slideshow -->
+                <div class="cell">
+                    <ul class="dots project7-dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="project7desc">Description of project 1 goes here.</p>
+        </div>
+    </div>
+
+    <footer id="footernote">&copy; 2023 Hugo Lima. All rights reserved. </footer>>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Assuming you want the first li element to be active by default
+            $('.dots li:first-child').addClass('active');
+            // Add click event listener to the li elements
+            $('.dots li').click(function (event) {
+                // Prevent the default anchor tag behavior (preventing the page from scrolling)
+                event.preventDefault();
+
+                // Remove the "active" class from all li elements
+                $('.dots li').removeClass('active');
+                // Add the "active" class to the clicked li element
+                $(this).addClass('active');
+            });
+        });
+
+        /* $(document).ready(function () {
+            // Function to handle dot navigation
+            function handleDotNavigation(containerClass) {
+                // Assuming you want the first li element to be active by default for each set of dots
+                $(containerClass + ' .dots li:first-child').addClass('active');
+
+                // Add click event listener to each set of dots separately
+                $(containerClass + ' .dots li').click(function (event) {
+                    event.preventDefault(); // Prevent the default behavior (navigation)
+
+                    // Remove the "active" class from all li elements in this set of dots
+                    $(containerClass + ' .dots li').removeClass('active');
+                    // Add the "active" class to the clicked li element
+                    $(this).addClass('active');
+                });
+            }
+
+            // Call the function for each container that needs dot navigation
+            handleDotNavigation('.project1-dots');
+            handleDotNavigation('.project2-dots');
+            handleDotNavigation('.project3-dots');
+            handleDotNavigation('.project4-dots');
+            handleDotNavigation('.project5-dots');
+            handleDotNavigation('.project6-dots');
+            handleDotNavigation('.project7-dots');
+            // Add more calls for other containers as needed
+        }); */
+
+
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

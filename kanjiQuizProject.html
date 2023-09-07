@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body onload="switchLang('en', ProjectDescrContent)">
+    <header>
+        <h1 id="name"></h1>
+        <p id="introduction"></p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
+            <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
+            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+        </div>
+        <p id="moreInfo" class="icon-text"> </p>
+    </header>
+
+    <main>
+        <div class="item-about">
+            <h2>Kanji Quiz</h2>
+            <div class="image-container">
+                <img src="place_holder.jpg" alt="Profile Image">
+            </div>
+            <p id="kanjiQuizDesc"> </p>
+            <p id="kanjiQuizRepo"> </p>
+        </div>
+    </main>
+
+
+    <footer id="footernote">&copy; </footer>>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

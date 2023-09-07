@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body onload="switchLang('en', ProjectDescrContent)">
+    <header>
+        <h1 id="name"></h1>
+        <p id="introduction"></p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
+            <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
+            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+        </div>
+        <p id="moreInfo" class="icon-text"> </p>
+    </header>
+
+    <main>
+        <div class="item-about">
+            <h2>Book Store System</h2>
+            <div class="image-container-exp slideshow">
+                <img src="srcImgs/01-Login.PNG" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/02-Tela Principal (aba vendas).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/03-Tela Principal (aba Cliente).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/04-Tela Principal (aba Funcionario).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/05-Tela Principal (aba Cargo).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/06-Tela Principal (aba Fornecedor).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/07-Tela Principal (aba Livros).png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/08-Tela Principal (aba Contatos Online).png" alt="Profile Image" ,
+                    class="lightbox-image">
+                <img src="srcImgs/09-Cadastro_Cliente.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/10-RelatorioCliente.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/11-Cadastro_Funcionario.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/12-RelatorioFuncionario.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/13-Cadastro_Cargo.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/14-Cadastro_Fornecedor.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/15-RelatorioFornecedor.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/16-Cadastro_Livro.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/17-ContatoInfo.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/18-Pedido_Info.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/19-CupomVenda.png" alt="Profile Image" , class="lightbox-image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="3"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="4"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="5"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="6"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="7"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="8"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="9"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="10"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="11"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="12"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="13"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="14"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="15"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="16"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="17"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="18"><a href="#">2</a></li>
+                    </ul>
+                </div>
+                <p id="bookStoreDesc"> </p>
+            </div>
+            <p id="bookStoreDescTwo"> </p>
+            <div class="image-container-exp slideshow">
+                <img src="srcImgs/books.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/Contact.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/Index.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work01.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work02.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work03.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work04.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work05.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/work06.png" alt="Profile Image" , class="lightbox-image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="3"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="4"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="5"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="6"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="7"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="8"><a href="#">2</a></li>
+                    </ul>
+                </div>
+                <p id="bookStoreDesc"> </p>
+                <p id="bookStoreRepo"> </p>
+            </div>
+            <p id="bookStoreRepo"> </p>
+    </main>
+
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Lightbox Image">
+            <button id="lightbox-close">X</button>
+        </div>
+    </div>
+
+
+    <footer id="footernote">&copy; </footer>>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Assuming you want the first li element to be active by default
+            $('.dots li:first-child').addClass('active');
+            // Add click event listener to the li elements
+            $('.dots li').click(function (event) {
+                // Prevent the default anchor tag behavior (preventing the page from scrolling)
+                event.preventDefault();
+
+                // Remove the "active" class from all li elements
+                $('.dots li').removeClass('active');
+                // Add the "active" class to the clicked li element
+                $(this).addClass('active');
+            });
+        });
+
+    </script>
+
+    <script src="script.js"></script>
+
+    <script>
+        /* document.addEventListener("DOMContentLoaded", function () {
+            // ...
+
+            const lightboxOverlay = document.getElementById("lightbox-overlay");
+            const lightboxContent = document.getElementById("lightbox-content");
+            const lightboxImage = document.getElementById("lightbox-image");
+            const lightboxClose = document.getElementById("lightbox-close");
+
+            function openImage(index) {
+                showSlide(index);
+
+                // Show the lightbox overlay and content
+                lightboxOverlay.style.display = "block";
+            }
+
+            function closeLightbox() {
+                // Hide the lightbox overlay and content
+                lightboxOverlay.style.display = "none";
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const index = parseInt(button.getAttribute("data-index"));
+                    openImage(index);
+                });
+            });
+
+            lightboxClose.addEventListener("click", () => {
+                closeLightbox();
+            });
+
+            // ...
+        });
+
+        function openImage(index) {
+            showSlide(index);
+
+            // Set the src attribute of the lightbox image
+            lightboxImage.src = images[index].src;
+
+            // Show the lightbox overlay and content
+            lightboxOverlay.style.display = "block";
+        } */
+
+    </script>
+</body>
+
+</html>

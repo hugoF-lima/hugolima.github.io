@@ -1,0 +1,402 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    filter: sepia(0.1) grayscale(0.1);
+}
+
+
+/* Style the <main> element from about-me.html */
+main {
+    flex: 1;
+    /* Expand to fill available vertical space */
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center items horizontally */
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
+
+.smaller-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    /* Adjust the positioning as needed */
+    width: 20px;
+    /* Adjust the width of the image */
+    height: 20px;
+    /* Adjust the height of the image */
+    background-image: url('srcImgs\\craneIcon.png');
+    /* Specify the path to your icon image */
+    background-size: cover;
+    /* Adjust the sizing as needed */
+}
+
+
+
+/* .icon-text::after {
+    content: url('srcImgs\\craneIcon.png');
+    margin-left: 5px;
+    font-size: 16px;
+    
+} */
+
+.icon-text::after {
+    content: "";
+    background-image: url('srcImgs\\craneIcon.png');
+    background-size: cover;
+    /* This will maintain the image's aspect ratio and cover the entire container */
+    display: inline-block;
+    /* Allows you to control the width and height */
+    width: 36px;
+    /* Adjust the width as needed */
+    height: 36px;
+    /* Adjust the height as needed */
+    margin-left: 5px;
+    /* Adjust the margin as needed to separate the icon from text */
+    vertical-align: middle;
+    /* Align the icon vertically with the text */
+}
+
+/* Other styles for your content items */
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.smaller-text {
+    font-size: 80%;
+    /* Add any other styles you want for the smaller text */
+}
+
+#moreInfo {
+    font-size: 80%;
+    /* Add any other styles you want for the "moreInfo" text */
+}
+
+#moreInfo:hover {
+    color: aquamarine;
+    cursor: pointer;
+}
+
+.language-buttons {
+    position: absolute;
+    /* Add this */
+    top: 1rem;
+    /* Add this */
+    right: 1rem;
+    /* Add this */
+    display: flex;
+    align-items: center;
+}
+
+.language-button {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
+
+.item {
+    flex: 1;
+    max-width: calc(33.33% - 1rem);
+    background-color: #333131;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+}
+
+.item-about {
+    flex: 1;
+    max-width: calc(83.33% - 1rem);
+    background-color: #333131;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+}
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    text-align: center;
+}
+
+
+.dots {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+
+
+    .active {
+        a {
+            -webkit-transform: scale3d(1.3, 1.3, 1.3);
+            transform: scale3d(1.3, 1.3, 1.3);
+
+            &:after {
+                height: 100%;
+            }
+        }
+    }
+
+    li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0 2px;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+
+        a {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border-radius: 50%;
+            text-indent: -999em;
+            cursor: pointer;
+            position: absolute;
+            overflow: hidden;
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px white;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 0 1px #fff;
+                -webkit-transition: height 0.3s ease;
+                transition: height 0.3s ease;
+            }
+        }
+    }
+}
+
+.slideshow {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.slide-image {
+    width: 100%;
+    height: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* Add transition for opacity */
+}
+
+.slide-image:first-child {
+    display: block;
+    opacity: 1;
+}
+
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slideshow img:first-child {
+    display: block;
+}
+
+.image-container {
+    max-width: 100%;
+    display: inline-block;
+    /* Allow the container to take only the necessary width */
+    overflow: hidden;
+    /* Hide overflowing parts of the image */
+}
+
+.image-container-exp {
+    max-width: 100%;
+    display: inline-block;
+    /* Allow the container to take only the necessary width */
+    overflow: hidden;
+
+    /* Adjust the width as needed */
+    /* Adjust the height as needed */
+}
+
+.image-container-exp img {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+
+.video-container {
+    max-width: 1000px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    /* Center the video container horizontally */
+}
+
+.video-container video {
+    max-width: 80%;
+    /* Make sure the video doesn't exceed the container's width */
+    max-height: 80%;
+    /* Make sure the video doesn't exceed the container's height */
+    display: block;
+    /* Remove extra spacing below the video */
+}
+
+
+#project1:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project2:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project3:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project4:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project5:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project6:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+#project7:hover {
+    color: cyan;
+    /* Change text color to cyan blue */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+/*Overlay CSS for displaying image*/
+#lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+#lightbox-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 0;
+    /* Set padding to zero */
+    margin: 0;
+    /* Set margins to zero */
+    text-align: center;
+    max-width: 90%;
+    /* Set a maximum width within the viewport */
+    max-height: 90vh;
+    /* Set a maximum height within the viewport */
+    box-sizing: border-box;
+    /* Include padding and borders in the width and height */
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    /* Set a width for the close button */
+    height: 25px;
+    /* Set a height for the close button */
+    border-radius: 50%;
+    /* Make the background rounded */
+}
