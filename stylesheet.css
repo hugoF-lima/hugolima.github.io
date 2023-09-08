@@ -428,3 +428,13 @@ footer {
     border-radius: 50%;
     /* Make the background rounded */
 }
+
+/* Media query for screens with a maximum width of 768px (typical tablet width) */
+@media screen and (max-width: 768px) {
+    /* Add rules to adjust layout for tablet-sized screens, if needed */
+}
+
+/* Media query for screens with a maximum width of 480px (typical phone width) */
+@media screen and (max-width: 480px) {
+    /* Add rules to adjust layout for smaller phone-sized screens, if needed */
+}
