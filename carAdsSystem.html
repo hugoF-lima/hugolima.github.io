@@ -15,17 +15,18 @@
         <div class="language-buttons">
             <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
             <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
-            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
         </div>
         <p id="moreInfo" class="icon-text"> </p>
     </header>
 
     <main>
         <div class="item-about">
-            <h2>Car Ad System (Work in Progress)</h2>
+            <h2 id="carSystemTitle"></h2>
             <div class="image-container-exp slideshow">
                 <img src="srcImgs/image1_car_sales.png" alt="Profile Image">
-                <img src="srcImgs/image1_car_sales.png" alt="Profile Image">
+                <img src="srcImgs/image2_car_sales.png" alt="Profile Image">
                 <div class="cell">
                     <ul class="dots">
                         <li class="slide-button" data-index="0"><a href="#">1</a></li>

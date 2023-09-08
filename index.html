@@ -15,7 +15,8 @@
         <div class="language-buttons">
             <button class="language-button" onclick="switchLang('pt-br', homeLangContent)">PT-BR</button>
             <button class="language-button" onclick="switchLang('en', homeLangContent)">EN</button>
-            <button class="language-button" onclick="switchLang('jp', homeLangContent)">JP</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
         </div>
         <p id="moreInfo" class="smaller-text" onclick="openProjectPage('aboutMePage.html')"> </p>
     </header>
@@ -42,11 +43,13 @@
             <div class="image-container slideshow">
                 <img src="srcImgs/image1_kanjiquiz.png" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/image2_kanjiquiz.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image3_kanjiquiz.jpg" alt="Project 1 Image" , class="slide-image">
                 <!-- Add more images for slideshow -->
                 <div class="cell">
                     <ul class="dots  project2-dots">
                         <li class="slide-button" data-index="0"><a href="#">1</a></li>
                         <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">3</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,14 +62,14 @@
         <div class="item">
             <h2 id="project3" onclick="openProjectPage('bookStoreSystem.html')"></h2>
             <div class="image-container slideshow">
-                <img src="srcImgs/01-Login.PNG" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/04-Tela Principal (aba Funcionario).png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/18-Pedido_Info.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/01-Login.PNG" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/07-Tela Principal (aba Livros).png" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/08-Tela Principal (aba Contatos Online).png" alt="Project 1 Image" ,
                     class="slide-image">
                 <img src="srcImgs/09-Cadastro_Cliente.png" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/12-RelatorioFuncionario.png" alt="Project 1 Image" , class="slide-image">
-                <img src="srcImgs/18-Pedido_Info.png" alt="Project 1 Image" , class="slide-image">
                 <img src="srcImgs/19-CupomVenda.png" alt="Project 1 Image" , class="slide-image">
                 <!-- Add more images for slideshow -->
                 <div class="cell">
@@ -108,7 +111,7 @@
             <h2 id="project5" onclick="openProjectPage('outlookExtractor.html')"></h2>
             <div class="image-container slideshow">
                 <img src="srcImgs/image1_outlook_extractor.png" alt="Project 1 Image" , class="slide-image">
-                <img src="srcImgs/image1_outlook_extractor.png" alt="Project 1 Image" , class="slide-image">
+                <img src="srcImgs/image2_outlook_extractor.png" alt="Project 1 Image" , class="slide-image">
                 <!-- Add more images for slideshow -->
                 <div class="cell">
                     <ul class="dots  project5-dots">

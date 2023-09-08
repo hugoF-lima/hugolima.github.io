@@ -15,52 +15,57 @@
         <div class="language-buttons">
             <button class="language-button" onclick="switchLang('pt-br', AboutLangContent)">PT-BR</button>
             <button class="language-button" onclick="switchLang('en', AboutLangContent)">EN</button>
-            <button class="language-button" onclick="switchLang('jp', AboutLangContent)">JP</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
         </div>
-        <p id="moreInfo" class="smaller-text"> O que eu coloco aqui?</p>
+        <p id="moreInfo" class="icon-text"> </p>
     </header>
 
     <main>
-        <div class="item-about">
-            <h2>About Me </h2>
-            <div class="image-container">
-                <img src="place_holder.jpg" alt="Profile Image">
+        <div class="container">
+            <div class="item-about">
+                <h2>About Me </h2>
+                <div class="image-container">
+                </div>
+                <p id="aboutMe"> </p>
             </div>
-            <p id="aboutMe"> </p>
-        </div>
 
-        <div class="item-about">
-            <h2 id="myWorkHeaderTwo"> </h2>
-            <div class="image-container slideshow">
-                <img src="place_holder.jpg" alt="Project 1 Image" class="slide-image">
-                <img src="place_holder.jpg" alt="Project 1 Image" class="slide-image">
-                <!-- Add more images for slideshow -->
+            <div class="item-about">
+                <h2 id="myWorkHeaderTwo"> </h2>
+                <div class="image-container slideshow">
+                    <!-- Add more images for slideshow -->
+                </div>
+                <p id="myWork"></p>
             </div>
-            <p id="myWork"></p>
-        </div>
 
-        <div class="item-about">
-            <h2 id="contactMeHeaderTwo"> </h2>
-            <div class="image-container">
-                <img src="place_holder.png" alt="Contact Image">
+            <div class="item-about">
+                <h2 id="contactMeHeaderTwo"> </h2>
+                <div class="image-container">
+                </div>
+                <!-- Wish i could add my uri judge link-->>
+                <p id="contactMe"></p>
             </div>
-            <!-- Wish i could add my uri judge link-->>
-            <p id="contactMe"></p>
-        </div>
 
-        <div class="item-about">
-            <h2 id="thanksToHeaderTwo"> </h2>
-            <div class="image-container">
-                <img src="contact-image.jpg" alt="Contact Image">
+            <div class="item-about">
+                <h2 id="thanksToHeaderTwo"> </h2>
+                <div class="image-container">
+                </div>
+                <!-- Wish i could add my uri judge link-->>
+                <p id="thanksTo"></p>
             </div>
-            <!-- Wish i could add my uri judge link-->>
-            <p id="thanksTo"></p>
         </div>
         <!-- ... (other sections) -->
     </main>
 
+    <!-- Yet unused -->
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Lightbox Image">
+            <button id="lightbox-close">X</button>
+        </div>
+    </div>
 
-    <footer id="footernote">&copy; </footer>>
+    <footer id="footernote"> </footer>>
     </footer>
 
     <script src="script.js"></script>

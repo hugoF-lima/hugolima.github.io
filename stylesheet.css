@@ -129,7 +129,7 @@ header {
 
 .item-about {
     flex: 1;
-    max-width: calc(83.33% - 1rem);
+    max-width: calc(63.33% - 1rem);
     background-color: #333131;
     padding: 1rem;
     box-sizing: border-box;
@@ -284,6 +284,34 @@ header {
     /* Remove extra spacing below the video */
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+#jpbutton:hover {
+    cursor: not-allowed;
+}
 
 #project1:hover {
     color: cyan;
@@ -361,7 +389,7 @@ footer {
 }
 
 #lightbox-content {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -15,25 +15,54 @@
         <div class="language-buttons">
             <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
             <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
-            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
         </div>
         <p id="moreInfo" class="icon-text"> </p>
     </header>
 
     <main>
         <div class="item-about">
-            <h2>Recup ST Automate</h2>
-            <div class="image-container">
-                <img src="place_holder.jpg" alt="Profile Image">
+            <h2 id="recupStTitle"> </h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_recup_st_reader.jpg" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/image2_recup_st_reader.jpg" alt="Profile Image" , class="lightbox-image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                    </ul>
+                </div>
             </div>
             <p id="recupStDesc"> </p>
             <p id="recupStRepo"> </p>
         </div>
+
+        <div class="item-video">
+            <h2 id="showcase"> </h2>
+            <div class="video-container">
+                <p id="recupStVid"> </p>
+                <video controls>
+                    <source src="srcVideo\Recup_ST_Automate.mp4" type="video/mp4">
+                    <!-- Add additional <source> elements for other formats (WebM, Ogg) -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
     </main>
 
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Lightbox Image">
+            <button id="lightbox-close">X</button>
+        </div>
+    </div>
 
     <footer id="footernote">&copy; </footer>>
     </footer>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {

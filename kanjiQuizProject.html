@@ -15,7 +15,8 @@
         <div class="language-buttons">
             <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
             <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
-            <button class="language-button" onclick="switchLang('jp', ProjectDescrContent)">JP</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
         </div>
         <p id="moreInfo" class="icon-text"> </p>
     </header>
@@ -23,17 +24,50 @@
     <main>
         <div class="item-about">
             <h2>Kanji Quiz</h2>
-            <div class="image-container">
-                <img src="place_holder.jpg" alt="Profile Image">
+            <div class="image-container slideshow">
+                <img src="srcImgs/image1_kanjiquiz.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/image2_kanjiquiz.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/image3_kanjiquiz.jpg" alt="Profile Image" , class="lightbox-image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">3</a></li>
+                    </ul>
+                </div>
             </div>
             <p id="kanjiQuizDesc"> </p>
             <p id="kanjiQuizRepo"> </p>
         </div>
     </main>
 
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Lightbox Image">
+            <button id="lightbox-close">X</button>
+        </div>
+    </div>
 
     <footer id="footernote">&copy; </footer>>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Assuming you want the first li element to be active by default
+            $('.dots li:first-child').addClass('active');
+            // Add click event listener to the li elements
+            $('.dots li').click(function (event) {
+                // Prevent the default anchor tag behavior (preventing the page from scrolling)
+                event.preventDefault();
+
+                // Remove the "active" class from all li elements
+                $('.dots li').removeClass('active');
+                // Add the "active" class to the clicked li element
+                $(this).addClass('active');
+            });
+        });
+
+    </script>
 
     <script src="script.js"></script>
 </body>
