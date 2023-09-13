@@ -122,6 +122,7 @@ let AboutLangContent = {
     "en": {
         "moreInfo": "This portfolio is still under construction...",
         "aboutMeTitle": "About Me",
+        "aboutMeTitleTwo": "Overview",
         "aboutMe": `
         Hugo Freitas F. Lima, I'm a 25-year-old self-taught/formally educated individual in the field of computing.
         I've recently enrolled in an associate's degree at the Brazilian university of Fatec. My area of study is 
@@ -161,6 +162,7 @@ let AboutLangContent = {
     "pt-br": {
         "moreInfo": "Este Portfolio ainda está em construção...",
         "aboutMeTitle": "Sobre mim",
+        "aboutMeTitleTwo": "Overview",
         "aboutMe": `
         Hugo Freitas F. Lima, Tenho 25 anos e sou um individuo de formação tecnica e aprendizado autodidata na área da computação. Recentemente estou cursando Análise e Desenvolvimento de Sistemas na Fatec. 
         Eu comecei na programação como a maioria, através do ensino tecnico, Inicialmente fui introduzido á linguagem C, porem meu envolvimento apenas decolou quando fui aprendendo Java e SQL com a finalidade de construir um sistema de Cadastro e Vendas de uma livraria. No sistema se gerenciavam clientes, funcionários, fornecedores, livros e até mesmo o "fale conosco" de uma interface web.
