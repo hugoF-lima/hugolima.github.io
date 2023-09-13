@@ -423,7 +423,6 @@ footer {
     /* Make the background rounded */
 }
 
-
 /* Media query for screens with a maximum width of 768px (typical tablet width) */
 @media screen and (max-width: 768px) {
 
@@ -457,6 +456,15 @@ footer {
     .image-container {
         width: 80%;
         /* Adjust the width of the slideshow container for smaller screens */
+    }
+
+    .item-video .image-container iframe {
+        max-width: 100%;
+        /* Set maximum width to 100% to make it responsive */
+        width: 100%;
+        /* Ensure the iframe takes full width of its container */
+        height: auto;
+        /* Automatically adjust the height based on the aspect ratio */
     }
 
     /* Add any other responsive styles as needed */
@@ -510,6 +518,15 @@ footer {
     .image-container {
         width: 100%;
         /* Full width for slideshow container on smaller screens */
+    }
+
+    .item-video .image-container iframe {
+        max-width: 100%;
+        /* Set maximum width to 100% to make it responsive */
+        width: 100%;
+        /* Ensure the iframe takes full width of its container */
+        height: auto;
+        /* Automatically adjust the height based on the aspect ratio */
     }
 
     /* Add any other responsive styles as needed */
