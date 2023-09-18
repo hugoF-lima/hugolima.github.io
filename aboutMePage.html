@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<body onload="switchLang('en', AboutLangContent)">
+<body onload="switchLang(localStorage.getItem('languagePreference'), AboutLangContent)">
     <header>
         <h1 id="name"></h1>
         <p id="introduction"></p>
