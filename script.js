@@ -231,8 +231,17 @@ let AboutLangContent = {
     }
 } */
 
+function returnLangPreference() {
+    languagePreference = localStorage.getItem("languagePreference");
+    console.log("Yo", languagePreference);
+    return languagePreference;
+}
+
 function switchLang(lang, dictLang) {
-    const langData = dictLang[lang];
+    localStorage.setItem("languagePreference", localStorage.getItem("languagePreference") ? lang : 'en');
+    /* const langData = dictLang[lang]; */
+    const langData = dictLang[localStorage.getItem("languagePreference") ? returnLangPreference() : 'en'];
+    /* localStorage.removeItem("languagePreference"); */
     if (langData) {
         for (let key in langData) {
             console.log("Updating element with ID:", key);
@@ -256,7 +265,6 @@ function switchLang(lang, dictLang) {
         console.warn("Language data for", lang, "not found.");
     }
 }
-
 
 
 
@@ -403,3 +411,20 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     intializeLightBoxImages();
 });
+
+// Function to show the tooltip
+function showTooltip() {
+    const button = document.getElementById('jpbutton');
+    button.setAttribute('title', '準備中... \n In Progress... \n Em Progresso...');
+}
+
+// Function to hide the tooltip
+function hideTooltip() {
+    const button = document.getElementById('jpbutton');
+    button.removeAttribute('title');
+}
+
+// Add event listeners to show the tooltip on button click
+const button = document.getElementById('jpbutton');
+button.addEventListener('click', showTooltip);
+button.addEventListener('blur', hideTooltip);
