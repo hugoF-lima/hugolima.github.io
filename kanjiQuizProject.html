@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<body onload="switchLang('en', ProjectDescrContent)">
+<body onload="switchLang(localStorage.getItem('languagePreference'), ProjectDescrContent)">
     <header>
         <h1 id="name"></h1>
         <p id="introduction"></p>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <footer id="footernote">&copy;>
+    <footer id="footernote">&copy; </footer>>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
