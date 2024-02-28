@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body onload="switchLang(localStorage.getItem('languagePreference'), ProjectDescrContent)">
+    <header>
+        <h1 id="name"></h1>
+        <p id="introduction"></p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="switchLang('pt-br', ProjectDescrContent)">PT-BR</button>
+            <button class="language-button" onclick="switchLang('en', ProjectDescrContent)">EN</button>
+            <button id="jpbutton" class="language-button" onclick="switchLang('jp', homeLangContent)"
+                title="準備中... &#10; In Progress... &#10; Em Progresso..." disabled>JP</button>
+        </div>
+        <p id="moreInfo" class="icon-text"> </p>
+    </header>
+
+    <main>
+        <div class="item-about">
+            <h2>Simulado Enade</h2>
+            <div class="image-container slideshow">
+                <img src="srcImgs/simulado00-Site.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado00a-Site.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado01-Enunciado.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado02-Alternativas_e_Botões.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado03-Estatisticas.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado04-Resultado.png" alt="Profile Image" , class="lightbox-image">
+                <img src="srcImgs/simulado05-Gabarito.png" alt="Profile Image" , class="lightbox-image">
+                <div class="cell">
+                    <ul class="dots">
+                        <li class="slide-button" data-index="0"><a href="#">1</a></li>
+                        <li class="slide-button" data-index="1"><a href="#">2</a></li>
+                        <li class="slide-button" data-index="2"><a href="#">3</a></li>
+                        <li class="slide-button" data-index="3"><a href="#">4</a></li>
+                        <li class="slide-button" data-index="4"><a href="#">4</a></li>
+                        <li class="slide-button" data-index="5"><a href="#">4</a></li>
+                        <li class="slide-button" data-index="6"><a href="#">4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p id="enadeDesc"> </p>
+            <p id="enadeRepo"> </p>
+        </div>
+    </main>
+
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Lightbox Image">
+            <button id="lightbox-close">X</button>
+        </div>
+    </div>
+
+    <footer id="footernote">&copy; </footer>>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Assuming you want the first li element to be active by default
+            $('.dots li:first-child').addClass('active');
+            // Add click event listener to the li elements
+            $('.dots li').click(function (event) {
+                // Prevent the default anchor tag behavior (preventing the page from scrolling)
+                event.preventDefault();
+
+                // Remove the "active" class from all li elements
+                $('.dots li').removeClass('active');
+                // Add the "active" class to the clicked li element
+                $(this).addClass('active');
+            });
+        });
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
