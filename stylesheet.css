@@ -307,55 +307,7 @@ header {
     cursor: not-allowed;
 }
 
-#project1:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project2:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project3:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project4:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project5:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project6:hover {
-    color: cyan;
-    /* Change text color to cyan blue */
-    text-decoration: underline;
-    /* Add underline */
-    cursor: pointer;
-}
-
-#project7:hover {
+.projectContainer:hover{
     color: cyan;
     /* Change text color to cyan blue */
     text-decoration: underline;
@@ -391,7 +343,7 @@ footer {
     margin: 0;
     text-align: center;
     max-width: 90%;
-    max-height: 90vh;
+    max-height: 900vh;
     box-sizing: border-box;
     display: flex;
     /* Add flex display */
