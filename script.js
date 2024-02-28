@@ -18,6 +18,8 @@ let homeLangContent = {
         "project6desc": "Invoice Automation Tool for updating values in an remote window.",
         "project7": "JP Typer",
         "project7desc": "Another one for Japanese learning enthusiasts. This has the goal of helping you practice typing and memorizing jukugo reading. It's Still a work in progress and SRS is still under way.",
+        "project8": "Enade Mockup Test",
+        "project8desc": "A website project which contains a mockup exam from a rather popular brazillian university evaluation exam, the 'Enade test' ",
         "footernote": "© 2023 Hugo Lima. All rights reserved.",
     },
     "pt-br": {
@@ -39,6 +41,8 @@ let homeLangContent = {
         "project6desc": "Ferramenta de automação para preenchimento de dados de nota fiscais.",
         "project7": "JP Typer",
         "project7desc": "Outra ferramenta para entusiastas da lingua japonesa. A finalidade é treinar digitação em japonês e memorizar jukugo. Ainda está em andamento e, um sistema de repetição espaçada segue em desenvolvimento.",
+        "project8": "Simulado Enade",
+        "project8desc": "Um Projeto Web a qual contem um simulado de um teste conhecido, o 'teste Enade'",
         "footernote": "© 2023 Hugo Lima. Todos direitos reservados.",
     },
     "jp": {
@@ -112,6 +116,8 @@ let ProjectDescrContent = {
         "recupStVid": "Abaixo segue como a automação ocorria. \n \n A lógica interna permitia que valores selecionados no emissor fossem automaticamente referenciados no .json, independente da ordem. \n \n -Por volta de 400 notas com 15 itens cada, podiam ser feitas semanalmente",
         "jpTyperDesc": "Meu primeiro projeto com Pyqt5(pyside2 mais especificamente). Para aqueles aprendendo a lingua japonesa praticarem digitação e memorização dos jukugo (com ou sem consulta ao hiragana). Um placar é mantido entre quantos acertos ocorrem com ou sem consulta aos hiraganas.",
         "jpTyperRepo": "https://github.com/hugoF-lima/pyside2_jp_typer/",
+        "enadeDesc": "Trabalho originalmente feito em grupo para a materia de Programação Web no primeiro ciclo de ADS. Feito puramente com HTML, CSS e JS. \n\n Alem de mim, creditos para KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) e os demais integrantes. \n\n O simulado pode ser acessado aqui: ",
+        "enadeRepo": "https://github.com/KauaCaze-Fatec/PMI-P1-Grupo1",
         "showcase": "Demonstração:",
         "footernote": "© 2023 Hugo Lima. Todos direitos reservados.",
     }
@@ -147,7 +153,7 @@ let AboutLangContent = {
         "contactMe": `
         Professional mail: hugolima720@protonmail.com
         College email: hugo.lima7@fatec.sp.gov.br
-        Github: https://github.com/hugoF-lima
+        Github: https://github.com/hugoF-lima 
         Linkedin profile: https://www.linkedin.com/in/hugo-lima-240ab6209/
     `,
         "contactMeHeaderTwo": "Contact Me!",
@@ -176,7 +182,7 @@ let AboutLangContent = {
         "contactMe": `
         Email profissional: hugolima720@protonmail.com
         Email de colégio: hugo.lima7@fatec.sp.gov.br
-        Github: https://github.com/hugoF-lima
+        Github: https://github.com/hugoF-lima 
         Linkedin profile: https://www.linkedin.com/in/hugo-lima-240ab6209/
     `,
         "contactMeHeaderTwo": "Contato!",
