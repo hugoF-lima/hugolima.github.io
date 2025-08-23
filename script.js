@@ -20,11 +20,11 @@ let homeLangContent = {
         "project7desc": "Another one for Japanese learning enthusiasts. This has the goal of helping you practice typing and memorizing jukugo reading. It's Still a work in progress and SRS is still under way.",
         "project8": "Enade Mockup Test",
         "project8desc": "A website project which contains a mockup exam from a rather popular brazillian university evaluation exam, the 'Enade test' ",
-        "footernote": "© 2027 Hugo Lima. All rights reserved.",
+        "footernote": "© 2025 Hugo Lima. All rights reserved.",
     },
     "pt-br": {
         "name": "Hugo Lima",
-        "footernote": "© 2027 Hugo Lima. Todos direitos reservados.",
+        "footernote": "© 2025 Hugo Lima. Todos direitos reservados.",
         "introduction": "Só mais um entusiasta de T.I com um misto de autodidatismo e formação tecnica. Abaixo seguem meus projetos, fiquem a vontade para explorar ou tirar duvidas.",
         "moreInfo": "( Veja mais sobre meu perfil! )",
         "project1": "Leitor de XML",
@@ -43,11 +43,11 @@ let homeLangContent = {
         "project7desc": "Outra ferramenta para entusiastas da lingua japonesa. A finalidade é treinar digitação em japonês e memorizar jukugo. Ainda está em andamento e, um sistema de repetição espaçada segue em desenvolvimento.",
         "project8": "Simulado Enade",
         "project8desc": "Um Projeto Web a qual contem um simulado de um teste conhecido, o 'teste Enade'",
-        "footernote": "© 2027 Hugo Lima. Todos direitos reservados.",
+        "footernote": "© 2025 Hugo Lima. Todos direitos reservados.",
     },
     "jp": {
         "name": "リーマヒューゴ",
-        "footernote": "© 2027 リーマヒューゴ. 全ての権利を有する。",
+        "footernote": "© 2025 リーマヒューゴ. 全ての権利を有する。",
         "introduction": "独学と学校教育の両方IT開発者です。プログラミングプロジェクトをこちらへ",
         "moreInfo": "詳細はこちら！",
         "project1": "XML Reader",
@@ -91,7 +91,7 @@ let ProjectDescrContent = {
         "enadeDesc": "Project originally intended for the University's first term 'Web Programming' subject. Made with vanilla HTML, CSS and JS. \n\n Besides myself, credits for Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) and other small collaborators. \n\n The mockup test can be accessed here (pt-br only): https://pmi-p1.vercel.app/",
         "enadeRepo": "https://github.com/KauaCaze-Fatec/PMI-P1-Grupo1",
         "showcase": "Showcase:",
-        "footernote": "© 2027 Hugo Lima. All rights reserved.",
+        "footernote": "© 2025 Hugo Lima. All rights reserved.",
     },
     "pt-br": {
         "moreInfo": "Esse Portfolio ainda segue em construção...",
@@ -123,7 +123,7 @@ let ProjectDescrContent = {
         "enadeDesc": "Trabalho originalmente feito em grupo para a materia de Programação Web no primeiro ciclo de ADS. Feito puramente com HTML, CSS e JS. \n\n Alem de mim, creditos para Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) e os demais integrantes. \n\n O simulado pode ser acessado aqui: https://pmi-p1.vercel.app/",
         "enadeRepo": "https://github.com/hugoF-lima/PMI-P1/tree/main",
         "showcase": "Demonstração:",
-        "footernote": "© 2027 Hugo Lima. Todos direitos reservados.",
+        "footernote": "© 2025 Hugo Lima. Todos direitos reservados.",
     }
 }
 
@@ -167,7 +167,7 @@ let AboutLangContent = {
         I would like mostly to thank my university colleagues for encouraging me to bring this portfolio forth.
         Despite me being very modest, they told this was the best way companies could better know my skills.
     `,
-        "footernote": "© 2027 Hugo Lima. All Rights Reserved.",
+        "footernote": "© 2025 Hugo Lima. All Rights Reserved.",
     },
     "pt-br": {
         "moreInfo": "Este Portfolio ainda está em construção...",
@@ -438,4 +438,5 @@ function hideTooltip() {
 const button = document.getElementById('jpbutton');
 button.addEventListener('click', showTooltip);
 button.addEventListener('blur', hideTooltip);
+
 
