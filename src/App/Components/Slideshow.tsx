@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface SlideshowProps {
   images: string[];
@@ -104,10 +105,17 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
             </>
           )}
           <div className="slideshow-viewport">
-            <button
-              type="button"
+            <div
+              role="button"
+              tabIndex={0}
               className="slideshow-image-button"
               onClick={() => setIsLightboxOpen(true)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  setIsLightboxOpen(true);
+                }
+              }}
               aria-label={`Open image ${currentIndex + 1} in lightbox`}
             >
               {images.map((img, idx) => (
@@ -122,66 +130,68 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
                   }}
                 />
               ))}
-            </button>
+            </div>
           </div>
           {renderDots()}
         </div>
       </div>
-      {isLightboxOpen && (
-        <div
-          className="lightbox-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label={`Image ${currentIndex + 1} preview`}
-          onClick={() => setIsLightboxOpen(false)}
-        >
-          <div className="lightbox-content" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              className="lightbox-close-button"
-              onClick={() => setIsLightboxOpen(false)}
-              aria-label="Close lightbox"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-            {hasMultipleImages && (
-              <>
-                <button
-                  type="button"
-                  className="slideshow-arrow slideshow-arrow-prev lightbox-arrow"
-                  onClick={showPreviousSlide}
-                  aria-label="Previous image"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  className="slideshow-arrow slideshow-arrow-next lightbox-arrow"
-                  onClick={showNextSlide}
-                  aria-label="Next image"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                  </svg>
-                </button>
-              </>
-            )}
-            <div className="lightbox-image-frame">
-              <img
-                src={images[currentIndex]}
-                alt={`Slide ${currentIndex + 1}`}
-                className="lightbox-image"
-              />
+      {isLightboxOpen && typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            className="lightbox-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Image ${currentIndex + 1} preview`}
+            onClick={() => setIsLightboxOpen(false)}
+          >
+            <div className="lightbox-content" onClick={(event) => event.stopPropagation()}>
+              <button
+                type="button"
+                className="lightbox-close-button"
+                onClick={() => setIsLightboxOpen(false)}
+                aria-label="Close lightbox"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              {hasMultipleImages && (
+                <>
+                  <button
+                    type="button"
+                    className="slideshow-arrow slideshow-arrow-prev lightbox-arrow"
+                    onClick={showPreviousSlide}
+                    aria-label="Previous image"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    className="slideshow-arrow slideshow-arrow-next lightbox-arrow"
+                    onClick={showNextSlide}
+                    aria-label="Next image"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </>
+              )}
+              <div className="lightbox-image-frame">
+                <img
+                  src={images[currentIndex]}
+                  alt={`Slide ${currentIndex + 1}`}
+                  className="lightbox-image"
+                />
+              </div>
+              {renderDots('cell lightbox-cell')}
             </div>
-            {renderDots('cell lightbox-cell')}
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 };
