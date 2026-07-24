@@ -10,6 +10,14 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const hasMultipleImages = images.length > 1;
 
+  const openLightbox = (event?: React.KeyboardEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    event?.preventDefault();
+    event?.stopPropagation();
+    window.requestAnimationFrame(() => {
+      setIsLightboxOpen(true);
+    });
+  };
+
   const showPreviousSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   }, [images.length]);
@@ -109,11 +117,10 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
               role="button"
               tabIndex={0}
               className="slideshow-image-button"
-              onClick={() => setIsLightboxOpen(true)}
+              onClick={openLightbox}
               onKeyDown={(event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  setIsLightboxOpen(true);
+                  openLightbox(event);
                 }
               }}
               aria-label={`Open image ${currentIndex + 1} in lightbox`}
@@ -124,6 +131,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
                   src={img}
                   alt={`Slide ${idx + 1}`}
                   className="slide-image"
+                  draggable={false}
                   style={{
                     display: idx === currentIndex ? 'block' : 'none',
                     opacity: idx === currentIndex ? 1 : 0,
@@ -185,6 +193,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
                   src={images[currentIndex]}
                   alt={`Slide ${currentIndex + 1}`}
                   className="lightbox-image"
+                  draggable={false}
                 />
               </div>
               {renderDots('cell lightbox-cell')}

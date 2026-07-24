@@ -45,20 +45,22 @@ const HomePage: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/project/:slug" element={<ProjectDetail />} />
-        {legacyRedirects.map((redirect) => (
-          <Route
-            key={redirect.path}
-            path={redirect.path}
-            element={<Navigate to={redirect.to} replace />}
-          />
-        ))}
-      </Routes>
-      <Footer />
+      <div className="app-shell">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
+          {legacyRedirects.map((redirect) => (
+            <Route
+              key={redirect.path}
+              path={redirect.path}
+              element={<Navigate to={redirect.to} replace />}
+            />
+          ))}
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };
