@@ -1,0 +1,60 @@
+{
+  "redirects": [
+    {
+      "source": "/xmlReaderProject.html",
+      "destination": "/project/xml-reader",
+      "permanent": true
+    },
+    {
+      "source": "/kanjiQuizProject.html",
+      "destination": "/project/kanji-quiz",
+      "permanent": true
+    },
+    {
+      "source": "/bookStoreSystem.html",
+      "destination": "/project/bookstore-system",
+      "permanent": true
+    },
+    {
+      "source": "/carAdsSystem.html",
+      "destination": "/project/car-ads-system",
+      "permanent": true
+    },
+    {
+      "source": "/outlookExtractor.html",
+      "destination": "/project/outlook-extractor",
+      "permanent": true
+    },
+    {
+      "source": "/recupStProject.html",
+      "destination": "/project/recup-st-reader",
+      "permanent": true
+    },
+    {
+      "source": "/jpTyperQt.html",
+      "destination": "/project/jp-typer",
+      "permanent": true
+    },
+    {
+      "source": "/enadeSimulado.html",
+      "destination": "/project/enade-simulado",
+      "permanent": true
+    },
+    {
+      "source": "/aboutMePage.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/index.old.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
