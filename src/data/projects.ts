@@ -1,5 +1,20 @@
 import { media } from './media';
 
+export type ProjectTech =
+  | 'python'
+  | 'qt'
+  | 'pandas'
+  | 'xml'
+  | 'java'
+  | 'sqlite'
+  | 'json'
+  | 'html'
+  | 'css'
+  | 'javascript'
+  | 'typescript'
+  | 'react'
+  | 'vite';
+
 export interface Project {
   id: number;
   slug: string;
@@ -7,6 +22,9 @@ export interface Project {
   descKey: string;
   fullDescKey?: string;
   repoKey?: string;
+  liveDemoUrl?: string;
+  showLiveDemo?: boolean;
+  techStack: ProjectTech[];
   videos?: Array<{
     src: string;
     descKey: string;
@@ -22,6 +40,7 @@ export const projects: Project[] = [
     descKey: 'project1Desc',
     fullDescKey: 'xmlReaderDesc',
     repoKey: 'xmlReaderRepo',
+    techStack: ['python', 'pandas', 'xml', 'qt'],
     videos: [
       {
         src: media.videos.xmlReader[0],
@@ -41,6 +60,7 @@ export const projects: Project[] = [
     descKey: 'project2Desc',
     fullDescKey: 'kanjiQuizDesc',
     repoKey: 'kanjiQuizRepo',
+    techStack: ['python', 'qt'],
     images: media.images.kanjiQuiz,
   },
   {
@@ -50,6 +70,7 @@ export const projects: Project[] = [
     descKey: 'project3Desc',
     fullDescKey: 'bookStoreDesc',
     repoKey: 'bookStoreRepo',
+    techStack: ['java', 'sqlite', 'html', 'css'],
     images: media.images.bookStore,
   },
   {
@@ -59,6 +80,7 @@ export const projects: Project[] = [
     descKey: 'project4Desc',
     fullDescKey: 'carSystemDesc',
     repoKey: 'carSystemRepo',
+    techStack: ['java', 'sqlite'],
     images: media.images.carAd,
   },
   {
@@ -68,6 +90,7 @@ export const projects: Project[] = [
     descKey: 'project5Desc',
     fullDescKey: 'outlookDesc',
     repoKey: 'outlookRepo',
+    techStack: ['python', 'qt'],
     videos: [
       {
         src: media.videos.outlook[0],
@@ -83,6 +106,7 @@ export const projects: Project[] = [
     descKey: 'project6Desc',
     fullDescKey: 'recupStDesc',
     repoKey: 'recupStRepo',
+    techStack: ['python', 'qt', 'json'],
     videos: [
       {
         src: media.videos.recupSt[0],
@@ -98,6 +122,7 @@ export const projects: Project[] = [
     descKey: 'project7Desc',
     fullDescKey: 'jpTyperDesc',
     repoKey: 'jpTyperRepo',
+    techStack: ['python', 'qt'],
     images: media.images.jpTyper,
   },
   {
@@ -107,6 +132,8 @@ export const projects: Project[] = [
     descKey: 'project8Desc',
     fullDescKey: 'enadeDesc',
     repoKey: 'enadeRepo',
+    liveDemoUrl: 'https://pmi-p1.vercel.app/',
+    techStack: ['html', 'css', 'javascript'],
     images: media.images.enade,
   },
 ];

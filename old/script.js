@@ -46,8 +46,8 @@ let homeLangContent = {
         "footernote": "© 2025 Hugo Lima. Todos direitos reservados.",
     },
     "jp": {
-        "name": "リーマヒューゴ",
-        "footernote": "© 2025 リーマヒューゴ. 全ての権利を有する。",
+        "name": "リーマフーゴ",
+        "footernote": "© 2025 リーマフーゴ. 全ての権利を有する。",
         "introduction": "独学と学校教育の両方IT開発者です。プログラミングプロジェクトをこちらへ",
         "moreInfo": "詳細はこちら！",
         "project1": "XML Reader",
