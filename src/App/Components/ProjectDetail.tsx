@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { projects } from '../../data/projects';
 import { Slideshow } from './Slideshow';
 import { ProjectMeta } from './ProjectMeta';
+import { useSurfaceBorderFlow } from '../hooks/useSurfaceBorderFlow';
 import { snapshotRect, transitionTimings, useProjectTransition } from '../transition/projectTransitionStore';
 
 export const ProjectDetail: React.FC = () => {
@@ -12,6 +13,7 @@ export const ProjectDetail: React.FC = () => {
   const navigate = useNavigate();
   const detailShellRef = useRef<HTMLDivElement | null>(null);
   const { transition, syncTargetRect, settleIntoDetail, clearTransition, startReverseTransition } = useProjectTransition();
+  const surfaceBorderFlowHandlers = useSurfaceBorderFlow();
   const project = projects.find(p => p.slug === slug);
 
   useLayoutEffect(() => {
@@ -97,6 +99,7 @@ export const ProjectDetail: React.FC = () => {
               ? 'project-detail-shell-transitioning-out'
               : '',
           ].filter(Boolean).join(' ')}
+          {...surfaceBorderFlowHandlers}
         >
           <div className="project-detail-hero">
             <section className="project-detail-media-column">
@@ -117,6 +120,7 @@ export const ProjectDetail: React.FC = () => {
           {project.videos && project.videos.length > 0 && (
             <section
               className="project-showcase-section project-detail-showcase surface-border-flow"
+              {...surfaceBorderFlowHandlers}
             >
               <h2>{t('showcase')}</h2>
               <div className="showcase-list">

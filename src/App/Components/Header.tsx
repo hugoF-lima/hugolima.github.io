@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { media } from '../../data/media';
@@ -6,9 +6,9 @@ import { PitchEmbed } from './PitchEmbed';
 import { useReactiveSurface } from '../hooks/useReactiveSurface';
 
 const languages = [
-  { code: 'pt-BR', name: 'Português (Brasil)' },
-  { code: 'en', name: 'English' },
-  { code: 'jp', name: '日本語' },
+  { code: 'pt-BR', name: 'Português', flag: '🇧🇷' },
+  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'jp', name: '日本語', flag: '🇯🇵' },
 ];
 
 const resumeLinks = media.resumes;
@@ -18,16 +18,25 @@ export const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const reactiveSurfaceHandlers = useReactiveSurface();
+  const introductionText = t('introduction');
+  const languageMenuRef = useRef<HTMLDivElement | null>(null);
   const [showResumeDropdown, setShowResumeDropdown] = useState(false);
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showPitch, setShowPitch] = useState(false);
   const [pitchFadeProgress, setPitchFadeProgress] = useState(0);
   const [headerState, setHeaderState] = useState<'default' | 'mid' | 'compact'>('default');
+  const [typedIntroduction, setTypedIntroduction] = useState('');
+  const [isIntroductionTyping, setIsIntroductionTyping] = useState(false);
 
   const showHomeButton = location.pathname !== '/';
+  const activeLanguage = languages.find((lang) => lang.code === i18n.language)
+    ?? languages.find((lang) => lang.code === i18n.resolvedLanguage)
+    ?? languages[1];
 
   const handleLanguageChange = (lang: string) => {
     i18n.changeLanguage(lang);
     localStorage.setItem('languagePreference', lang);
+    setShowLanguageDropdown(false);
   };
 
   const handleNavigateHome = () => {
@@ -94,6 +103,82 @@ export const Header: React.FC = () => {
     };
   }, [showPitch]);
 
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTypedIntroduction(introductionText);
+      setIsIntroductionTyping(false);
+      return undefined;
+    }
+
+    let timeoutId: number | undefined;
+    let isCancelled = false;
+    let nextCharacterIndex = 0;
+
+    setTypedIntroduction('');
+    setIsIntroductionTyping(true);
+
+    const typeNextCharacter = () => {
+      if (isCancelled) {
+        return;
+      }
+
+      nextCharacterIndex += 1;
+      setTypedIntroduction(introductionText.slice(0, nextCharacterIndex));
+
+      if (nextCharacterIndex >= introductionText.length) {
+        setIsIntroductionTyping(false);
+        return;
+      }
+
+      const currentCharacter = introductionText[nextCharacterIndex - 1];
+      const nextDelay = /\s/.test(currentCharacter)
+        ? 18
+        : /[.,!?]/.test(currentCharacter)
+          ? 85
+          : 26;
+
+      timeoutId = window.setTimeout(typeNextCharacter, nextDelay);
+    };
+
+    timeoutId = window.setTimeout(typeNextCharacter, 140);
+
+    return () => {
+      isCancelled = true;
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [introductionText, i18n.resolvedLanguage]);
+
+  useEffect(() => {
+    if (!showLanguageDropdown) {
+      return undefined;
+    }
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (
+        languageMenuRef.current
+        && !languageMenuRef.current.contains(event.target as Node)
+      ) {
+        setShowLanguageDropdown(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowLanguageDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [showLanguageDropdown]);
+
   return (
     <header
       className={`site-header header-reactive ${headerState}`}
@@ -141,22 +226,105 @@ export const Header: React.FC = () => {
             </svg>
           </a>
         </div>
-        <div className="language-buttons">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              id={lang.code === 'jp' ? 'jpbutton' : undefined}
-              className={`language-button ${i18n.language === lang.code ? 'active' : ''}`}
-              onClick={() => handleLanguageChange(lang.code)}
+      </div>
+
+      <div
+        ref={languageMenuRef}
+        className={`language-dropdown ${showLanguageDropdown ? 'open' : ''}`}
+      >
+        <button
+          type="button"
+          className="language-trigger"
+          onClick={() => {
+            setShowResumeDropdown(false);
+            setShowLanguageDropdown((current) => !current);
+          }}
+          aria-haspopup="menu"
+          aria-expanded={showLanguageDropdown}
+        >
+          <span className="language-trigger-icon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              {lang.name}
-            </button>
-          ))}
-        </div>
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </span>
+          <span className="language-trigger-label">{activeLanguage.name}</span>
+          <span className="language-trigger-arrow" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+
+        {showLanguageDropdown && (
+          <div className="language-dropdown-menu" role="menu" aria-label={t('languageMenu')}>
+            <p className="language-dropdown-title">{t('languageMenu')}</p>
+            {languages.map((lang) => {
+              const isActive = activeLanguage.code === lang.code;
+
+              return (
+                <button
+                  key={lang.code}
+                  type="button"
+                  className={`language-option ${isActive ? 'active' : ''}`}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  role="menuitemradio"
+                  aria-checked={isActive}
+                >
+                  <span className="language-option-flag" aria-hidden="true">{lang.flag}</span>
+                  <span className="language-option-label">{lang.name}</span>
+                  <span className="language-option-check" aria-hidden="true">
+                    {isActive ? '✓' : ''}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <h1 id="name" className="header-name" onClick={handleNavigateHome}>{t('name')}</h1>
-      <p id="introduction" className="header-introduction">{t('introduction')}</p>
+      <p id="introduction" className="header-introduction">
+        <span className="header-introduction-typing-shell">
+          <span
+            aria-hidden="true"
+            className="header-introduction-ghost"
+          >
+            {introductionText}
+          </span>
+          <span className="header-introduction-live">
+            {typedIntroduction}
+            <span
+              aria-hidden="true"
+              className={`header-introduction-cursor ${isIntroductionTyping ? 'typing' : ''}`}
+            />
+            <span className="header-introduction-wrap-anchor" aria-hidden="true">
+              {introductionText.slice(typedIntroduction.length)}
+            </span>
+          </span>
+        </span>
+      </p>
       <div className="header-links">
         <button
           type="button"

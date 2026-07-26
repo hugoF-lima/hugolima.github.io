@@ -112,6 +112,10 @@ body {
   z-index: 1;
 }
 
+.site-header > .language-dropdown {
+  z-index: 1010;
+}
+
 .header-reactive {
   --pointer-x: 50%;
   --pointer-y: 50%;
@@ -255,6 +259,51 @@ body {
   transition: margin 0.25s ease, font-size 0.25s ease, opacity 0.25s ease;
 }
 
+.header-introduction-typing-shell {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.header-introduction-ghost {
+  visibility: hidden;
+  white-space: normal;
+}
+
+.header-introduction-live {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+.header-introduction-wrap-anchor {
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.header-introduction-cursor {
+  display: inline;
+  width: 0;
+  min-width: 0;
+  height: auto;
+  margin-left: 0;
+  vertical-align: baseline;
+  background: none;
+  border-left: 0.11em solid currentColor;
+  animation: header-cursor-blink 1s steps(1, end) infinite;
+}
+
+.header-introduction-cursor.typing {
+  animation-duration: 0.78s;
+}
+
+.header-introduction-cursor:not(.typing) {
+  display: none;
+}
+
 .site-header.compact .header-introduction {
   margin-bottom: 0.3rem;
   font-size: 0.92rem;
@@ -265,6 +314,16 @@ body {
   margin-bottom: 0.4rem;
   font-size: 0.96rem;
   opacity: 0.96;
+}
+
+@keyframes header-cursor-blink {
+  0%, 49% {
+    border-left-color: currentColor;
+  }
+
+  50%, 100% {
+    border-left-color: transparent;
+  }
 }
 
 #moreInfo {
@@ -370,57 +429,166 @@ body {
   line-height: 1.6;
 }
 
-.language-buttons {
+.language-dropdown {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  display: flex;
-  align-items: center;
+  z-index: 1003;
   transition: top 0.25s ease, right 0.25s ease;
 }
 
-.site-header.compact .language-buttons {
+.site-header.compact .language-dropdown {
   top: 0.65rem;
   right: 0.85rem;
 }
 
-.site-header.mid .language-buttons {
+.site-header.mid .language-dropdown {
   top: 0.82rem;
   right: 0.92rem;
 }
 
-.language-button {
-  padding: 0.5rem 1rem;
-  margin-left: 0.75rem;
-  border: none;
-  border-radius: 25px;
-  background-color: #555;
+.language-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(224, 228, 236, 0.28);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(0, 122, 94, 0.96) 0%, rgba(0, 98, 76, 0.92) 100%);
   color: white;
   cursor: pointer;
-  transition: padding 0.25s ease, margin-left 0.25s ease, font-size 0.25s ease;
+  font: inherit;
+  backdrop-filter: blur(18px);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease, background-color 0.14s ease, padding 0.25s ease, font-size 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0, 40, 32, 0.28);
 }
 
-.site-header.compact .language-button {
-  padding: 0.4rem 0.8rem;
-  margin-left: 0.55rem;
+.language-trigger:hover {
+  transform: translateY(-1px);
+  border-color: rgba(224, 228, 236, 0.42);
+  box-shadow: 0 14px 30px rgba(3, 5, 12, 0.3);
+}
+
+.language-trigger:active {
+  transform: translateY(0);
+}
+
+.language-trigger-icon,
+.language-trigger-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.language-trigger-label {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.language-trigger-arrow {
+  margin-left: 0.02rem;
+  transition: transform 0.22s ease;
+}
+
+.language-dropdown.open .language-trigger-arrow {
+  transform: rotate(180deg);
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  right: 0;
+  z-index: 1004;
+  min-width: max(100%, 13.2rem);
+  padding: 0.85rem 0.7rem 0.7rem;
+  border: 1px solid rgba(224, 228, 236, 0.32);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(68, 68, 72, 0.98) 0%, rgba(52, 52, 56, 0.96) 100%);
+  box-shadow: 0 18px 36px rgba(3, 5, 12, 0.36);
+  text-align: left;
+  backdrop-filter: blur(18px);
+}
+
+.language-dropdown-title {
+  margin: 0 0 0.55rem;
+  padding: 0 0.35rem;
+  color: #e0e4ec;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.68rem 0.45rem;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #e8eaef;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background-color 0.12s ease, color 0.12s ease, transform 0.12s ease;
+}
+
+.language-option:hover {
+  background: rgba(224, 228, 236, 0.12);
+  color: #f5f7fb;
+  transform: translateX(2px);
+}
+
+.language-option:active {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(1px);
+}
+
+.language-option-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-option-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.language-option-check {
+  min-width: 1rem;
+  color: #d8dce4;
+  font-weight: 700;
+}
+
+.language-option.active {
+  color: #f5f7fb;
+  background: rgba(224, 228, 236, 0.08);
+}
+
+.site-header.compact .language-trigger {
+  padding: 0.5rem 0.78rem;
   font-size: 0.9rem;
 }
 
-.site-header.mid .language-button {
-  padding: 0.45rem 0.9rem;
-  margin-left: 0.65rem;
+.site-header.mid .language-trigger {
+  padding: 0.56rem 0.84rem;
   font-size: 0.95rem;
-}
-
-.language-button.active {
-  background-color: #007a5e;
-  font-weight: bold;
 }
 
 .resume-dropdown {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  z-index: 1002;
   transition: bottom 0.25s ease, right 0.25s ease;
 }
 
@@ -563,44 +731,36 @@ body {
   background:
     repeating-linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0) 0 16px,
-      rgba(226, 230, 237, 0.24) 16px 24px,
-      rgba(248, 249, 251, 0.86) 24px 38px,
-      rgba(255, 255, 255, 0) 38px 76px,
-      rgba(235, 239, 245, 0.18) 76px 84px,
-      rgba(255, 255, 255, 0) 84px 132px
-    ) top left / 240% 1px no-repeat,
+      rgba(255, 255, 255, 0) 0 96px,
+      rgba(226, 230, 237, 0.22) 96px 108px,
+      rgba(248, 249, 251, 0.78) 108px 132px,
+      rgba(255, 255, 255, 0) 132px 240px
+    ) top left / 180% 2px no-repeat,
     repeating-linear-gradient(
       270deg,
-      rgba(255, 255, 255, 0) 0 18px,
-      rgba(232, 236, 242, 0.24) 18px 28px,
-      rgba(250, 251, 252, 0.82) 28px 40px,
-      rgba(255, 255, 255, 0) 40px 88px,
-      rgba(232, 236, 242, 0.18) 88px 96px,
-      rgba(255, 255, 255, 0) 96px 140px
-    ) bottom right / 240% 1px no-repeat,
+      rgba(255, 255, 255, 0) 0 112px,
+      rgba(232, 236, 242, 0.2) 112px 124px,
+      rgba(250, 251, 252, 0.74) 124px 148px,
+      rgba(255, 255, 255, 0) 148px 260px
+    ) bottom right / 180% 2px no-repeat,
     repeating-linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0) 0 14px,
-      rgba(226, 231, 238, 0.22) 14px 22px,
-      rgba(247, 249, 251, 0.84) 22px 34px,
-      rgba(255, 255, 255, 0) 34px 78px,
-      rgba(233, 237, 243, 0.18) 78px 86px,
-      rgba(255, 255, 255, 0) 86px 128px
-    ) top left / 1px 240% no-repeat,
+      rgba(255, 255, 255, 0) 0 88px,
+      rgba(226, 231, 238, 0.2) 88px 100px,
+      rgba(247, 249, 251, 0.76) 100px 124px,
+      rgba(255, 255, 255, 0) 124px 228px
+    ) top left / 2px 180% no-repeat,
     repeating-linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0) 0 20px,
-      rgba(226, 231, 238, 0.2) 20px 28px,
-      rgba(248, 250, 252, 0.8) 28px 40px,
-      rgba(255, 255, 255, 0) 40px 92px,
-      rgba(233, 237, 243, 0.18) 92px 100px,
-      rgba(255, 255, 255, 0) 100px 148px
-    ) bottom right / 1px 240% no-repeat,
-    linear-gradient(90deg, rgba(250, 251, 252, 0.45), rgba(255, 255, 255, 0)) top left / 28px 1px no-repeat,
-    linear-gradient(180deg, rgba(250, 251, 252, 0.42), rgba(255, 255, 255, 0)) top left / 1px 28px no-repeat,
-    linear-gradient(270deg, rgba(250, 251, 252, 0.42), rgba(255, 255, 255, 0)) bottom right / 24px 1px no-repeat,
-    linear-gradient(0deg, rgba(250, 251, 252, 0.4), rgba(255, 255, 255, 0)) bottom right / 1px 24px no-repeat;
+      rgba(255, 255, 255, 0) 0 104px,
+      rgba(226, 231, 238, 0.18) 104px 116px,
+      rgba(248, 250, 252, 0.72) 116px 140px,
+      rgba(255, 255, 255, 0) 140px 248px
+    ) bottom right / 2px 180% no-repeat,
+    linear-gradient(90deg, rgba(250, 251, 252, 0.38), rgba(255, 255, 255, 0)) top left / 36px 2px no-repeat,
+    linear-gradient(180deg, rgba(250, 251, 252, 0.36), rgba(255, 255, 255, 0)) top left / 2px 36px no-repeat,
+    linear-gradient(270deg, rgba(250, 251, 252, 0.36), rgba(255, 255, 255, 0)) bottom right / 32px 2px no-repeat,
+    linear-gradient(0deg, rgba(250, 251, 252, 0.34), rgba(255, 255, 255, 0)) bottom right / 2px 32px no-repeat;
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -610,21 +770,32 @@ body {
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
-  animation: surface-circuit-trace 4.6s linear infinite;
-  transition: opacity 0.28s ease, filter 0.28s ease;
+  animation: surface-circuit-trace 16s ease-in-out infinite;
+  transition: opacity 0.45s ease, filter 0.45s ease;
   pointer-events: none;
   z-index: 0;
-  filter: blur(0.15px) drop-shadow(0 0 8px rgba(242, 245, 249, 0.14));
+  filter: drop-shadow(0 0 10px rgba(242, 245, 249, 0.12));
 }
 
 .surface-border-flow:hover::before {
-  opacity: 0.52;
-  filter: drop-shadow(0 0 8px rgba(245, 247, 250, 0.14));
+  opacity: 0.46;
+  filter: drop-shadow(0 0 10px rgba(245, 247, 250, 0.12));
 }
 
 .surface-border-flow:hover::after {
-  opacity: 0.84;
-  filter: blur(0.15px) drop-shadow(0 0 9px rgba(245, 247, 250, 0.18));
+  opacity: 0.72;
+  filter: drop-shadow(0 0 12px rgba(245, 247, 250, 0.16));
+}
+
+.surface-border-flow.surface-border-flow-settled:hover::before,
+.surface-border-flow.surface-border-flow-settled:hover::after {
+  animation: none;
+  opacity: 0.22;
+  filter: drop-shadow(0 0 4px rgba(245, 247, 250, 0.06));
+}
+
+.surface-border-flow.surface-border-flow-settled:hover::after {
+  opacity: 0;
 }
 
 .surface-border-flow > * {
@@ -644,7 +815,8 @@ body {
 }
 
 @keyframes surface-circuit-trace {
-  0% {
+  0%,
+  38% {
     background-position:
       0% 0,
       100% 100%,
@@ -656,12 +828,50 @@ body {
       100% 100%;
   }
 
+  52% {
+    background-position:
+      165% 0,
+      100% 100%,
+      0 0%,
+      100% 100%,
+      0 0,
+      0 0,
+      100% 100%,
+      100% 100%;
+  }
+
+  52%,
+  68% {
+    background-position:
+      165% 0,
+      100% 100%,
+      0 0%,
+      100% 100%,
+      0 0,
+      0 0,
+      100% 100%,
+      100% 100%;
+  }
+
+  82% {
+    background-position:
+      165% 0,
+      -85% 100%,
+      0 165%,
+      100% -85%,
+      0 0,
+      0 0,
+      100% 100%,
+      100% 100%;
+  }
+
+  82%,
   100% {
     background-position:
-      220% 0,
-      -120% 100%,
-      0 220%,
-      100% -120%,
+      165% 0,
+      -85% 100%,
+      0 165%,
+      100% -85%,
       0 0,
       0 0,
       100% 100%,

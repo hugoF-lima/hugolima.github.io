@@ -4,6 +4,7 @@ import { Project } from '../../data/projects';
 import { Slideshow } from './Slideshow';
 import { useNavigate } from 'react-router-dom';
 import { ProjectMeta } from './ProjectMeta';
+import { useSurfaceBorderFlow } from '../hooks/useSurfaceBorderFlow';
 import { getExpandedDetailRect, snapshotRect, transitionTimings, useProjectTransition } from '../transition/projectTransitionStore';
 
 interface ProjectCardProps {
@@ -15,6 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement | null>(null);
   const { transition, startForwardTransition, beginForwardOverlay } = useProjectTransition();
+  const surfaceBorderFlowHandlers = useSurfaceBorderFlow();
 
   const triggerTransition = () => {
     if (transition.phase !== 'idle') {
@@ -72,6 +74,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className={cardClassName}
       data-project-card={project.slug}
       onClick={handleTransitionClick}
+      {...surfaceBorderFlowHandlers}
     >
       <h2 className="projectContainer">
         <a
