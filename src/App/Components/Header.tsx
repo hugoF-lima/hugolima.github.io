@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { media } from '../../data/media';
 import { PitchEmbed } from './PitchEmbed';
+import { useReactiveSurface } from '../hooks/useReactiveSurface';
 
 const languages = [
   { code: 'pt-BR', name: 'Português (Brasil)' },
@@ -16,6 +17,7 @@ export const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  const reactiveSurfaceHandlers = useReactiveSurface();
   const [showResumeDropdown, setShowResumeDropdown] = useState(false);
   const [showPitch, setShowPitch] = useState(false);
   const [pitchFadeProgress, setPitchFadeProgress] = useState(0);
@@ -93,7 +95,10 @@ export const Header: React.FC = () => {
   }, [showPitch]);
 
   return (
-    <header className={`site-header ${headerState}`}>
+    <header
+      className={`site-header header-reactive ${headerState}`}
+      {...reactiveSurfaceHandlers}
+    >
       <div className="header-top-row">
         <div className="header-social-row">
           {showHomeButton && (

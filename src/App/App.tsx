@@ -1,11 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Header } from './Components/Header';
 import { Footer } from './Components/Footer';
 import { ProjectCard } from './Components/ProjectCard';
 import { ProjectDetail } from './Components/ProjectDetail';
 import { AboutPage } from './Components/AboutPage';
+import { ProjectTransitionOverlay } from './Components/ProjectTransitionOverlay';
 import { projects } from '../data/projects';
+import { ProjectTransitionProvider, snapshotRect, transitionTimings, useProjectTransition } from './transition/projectTransitionStore';
 
 const legacyRedirects = [
   { path: '/xmlReaderProject.html', to: '/project/xml-reader' },
@@ -21,17 +23,55 @@ const legacyRedirects = [
 ];
 
 const HomePage: React.FC = () => {
+  const location = useLocation();
+  const { transition, settleIntoHome, clearTransition } = useProjectTransition();
+
   // Split projects into groups of 2
   const projectGroups: typeof projects[] = [];
   for (let i = 0; i < projects.length; i += 2) {
     projectGroups.push(projects.slice(i, i + 2));
   }
 
+  useLayoutEffect(() => {
+    if (location.pathname !== '/' || transition.direction !== 'reverse' || transition.phase !== 'routeReverse' || !transition.slug) {
+      return;
+    }
+
+    window.scrollTo({ top: transition.homeScrollY, behavior: 'auto' });
+    let timeoutId: number | undefined;
+    const frame = window.requestAnimationFrame(() => {
+      const cardElement = document.querySelector(`[data-project-card="${transition.slug}"]`);
+
+      if (!(cardElement instanceof HTMLElement)) {
+        clearTransition();
+        return;
+      }
+
+      settleIntoHome(snapshotRect(cardElement.getBoundingClientRect()));
+      timeoutId = window.setTimeout(() => {
+        clearTransition();
+      }, transitionTimings.homeSettleDelay);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [clearTransition, location.pathname, settleIntoHome, transition.direction, transition.homeScrollY, transition.phase, transition.slug]);
+
+  const homeGroupClassName = [
+    'item-group',
+    transition.direction === 'forward' && (transition.phase === 'homeExit' || transition.phase === 'routeForward') ? 'item-group-transitioning-forward' : '',
+    transition.direction === 'reverse' && transition.phase === 'homeSettling' ? 'item-group-transitioning-reverse' : '',
+  ].filter(Boolean).join(' ');
+
   return (
     <>
       {projectGroups.map((group, groupIdx) => (
         <div key={groupIdx} className="container">
-          <div className="item-group">
+          <div className={homeGroupClassName}>
             {group.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -42,10 +82,17 @@ const HomePage: React.FC = () => {
   );
 };
 
-export const App: React.FC = () => {
+const RoutedApp: React.FC = () => {
   return (
-    <BrowserRouter>
+    <>
       <div className="app-shell">
+        <div className="app-atmosphere" aria-hidden="true">
+          <span className="app-atmosphere-glow app-atmosphere-glow-left" />
+          <span className="app-atmosphere-glow app-atmosphere-glow-right" />
+          <span className="app-atmosphere-glow app-atmosphere-glow-center" />
+          <span className="app-atmosphere-grid" />
+          <span className="app-atmosphere-vignette" />
+        </div>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -61,6 +108,17 @@ export const App: React.FC = () => {
         </Routes>
         <Footer />
       </div>
+      <ProjectTransitionOverlay />
+    </>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <ProjectTransitionProvider>
+        <RoutedApp />
+      </ProjectTransitionProvider>
     </BrowserRouter>
   );
 };

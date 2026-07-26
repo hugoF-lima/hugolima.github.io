@@ -2,6 +2,7 @@ import { media } from './media';
 
 export type ProjectTech =
   | 'python'
+  | 'pyautogui'
   | 'qt'
   | 'pandas'
   | 'xml'
@@ -40,7 +41,7 @@ export const projects: Project[] = [
     descKey: 'project1Desc',
     fullDescKey: 'xmlReaderDesc',
     repoKey: 'xmlReaderRepo',
-    techStack: ['python', 'pandas', 'xml', 'qt'],
+    techStack: ['python', 'pyautogui', 'pandas', 'xml', 'qt'],
     videos: [
       {
         src: media.videos.xmlReader[0],
@@ -106,7 +107,7 @@ export const projects: Project[] = [
     descKey: 'project6Desc',
     fullDescKey: 'recupStDesc',
     repoKey: 'recupStRepo',
-    techStack: ['python', 'qt', 'json'],
+    techStack: ['python', 'pyautogui', 'qt', 'json'],
     videos: [
       {
         src: media.videos.recupSt[0],

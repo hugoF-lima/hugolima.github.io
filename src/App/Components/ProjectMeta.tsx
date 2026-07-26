@@ -9,14 +9,27 @@ interface ProjectMetaProps {
 }
 
 const TechIcon: React.FC<{ tech: ProjectTech }> = ({ tech }) => {
-  const iconDefinition = techIconMap[tech];
-  const Icon = iconDefinition.icon;
+  const techDefinition = techIconMap[tech];
+
+  if (techDefinition.kind === 'text') {
+    return (
+      <span
+        className="project-tech-text"
+        title={techDefinition.label}
+        aria-label={techDefinition.label}
+      >
+        {techDefinition.text}
+      </span>
+    );
+  }
+
+  const Icon = techDefinition.icon;
 
   return (
     <span
       className="project-tech-icon"
-      title={iconDefinition.label}
-      aria-label={iconDefinition.label}
+      title={techDefinition.label}
+      aria-label={techDefinition.label}
     >
       <Icon aria-hidden="true" focusable="false" />
     </span>
