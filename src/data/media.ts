@@ -3,6 +3,12 @@ import xmlReader1 from '../media/images/image1_xmlreader.png';
 import xmlReader2 from '../media/images/image2_xmlreader.png';
 import xmlReader3 from '../media/images/image3_xmlreader.png';
 
+import ankiweaver1 from '../media/images/ankiweaver-main_interface.jpg';
+import ankiweaver2 from '../media/images/ankiweaver-import-cards.png';
+import ankiweaver3 from '../media/images/ankiweaver-bulk-actions.png';
+import ankiweaver4 from '../media/images/ankiweaver-settings.jpg';
+
+
 import kanjiQuiz1 from '../media/images/image1_kanjiquiz.png';
 import kanjiQuiz2 from '../media/images/image2_kanjiquiz.png';
 import kanjiQuiz3 from '../media/images/image3_kanjiquiz.jpg';
@@ -27,8 +33,9 @@ import bookStore17 from '../media/images/16-Cadastro_Livro.png';
 import bookStore18 from '../media/images/17-ContatoInfo.png';
 import bookStore19 from '../media/images/19-CupomVenda.png';
 
-import carAd1 from '../media/images/image1_car_sales.png';
-import carAd2 from '../media/images/image2_car_sales.png';
+import natsuMatsuri1 from '../media/images/natsu-matsuri-site-1.png';
+import natsuMatsuri2 from '../media/images/natsu-matsuri-site-2.png';
+import natsuMatsuri3 from '../media/images/natsu-matsuri-site-3.png';
 
 import outlook1 from '../media/images/image1_outlook_extractor.png';
 import outlook2 from '../media/images/image2_outlook_extractor.png';
@@ -63,6 +70,7 @@ import resumeJp from '../media/resume/履歴書　ー Hugo Lima (2026).pdf';
 export const media = {
   images: {
     xmlReader: [xmlReader1, xmlReader2, xmlReader3],
+    ankiWeaver: [ankiweaver1, ankiweaver2, ankiweaver3, ankiweaver4],
     kanjiQuiz: [kanjiQuiz1, kanjiQuiz2, kanjiQuiz3],
     bookStore: [
       bookStore1, bookStore2, bookStore3, bookStore4, bookStore5,
@@ -70,7 +78,7 @@ export const media = {
       bookStore11, bookStore12, bookStore13, bookStore14, bookStore15,
       bookStore16, bookStore17, bookStore18, bookStore19
     ],
-    carAd: [carAd1, carAd2],
+    natsuMatsuri: [natsuMatsuri1, natsuMatsuri2, natsuMatsuri3],
     outlook: [outlook1, outlook2],
     recupSt: [recupSt1, recupSt2],
     jpTyper: [jpTyper1, jpTyper2, jpTyper3, jpTyper5],

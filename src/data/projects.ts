@@ -41,7 +41,7 @@ export const projects: Project[] = [
     descKey: 'project1Desc',
     fullDescKey: 'xmlReaderDesc',
     repoKey: 'xmlReaderRepo',
-    techStack: ['python', 'pyautogui', 'pandas', 'xml', 'qt'],
+    techStack: ['python', 'pandas', 'xml', 'qt', 'pyautogui'],
     videos: [
       {
         src: media.videos.xmlReader[0],
@@ -54,8 +54,22 @@ export const projects: Project[] = [
     ],
     images: media.images.xmlReader,
   },
+
   {
     id: 2,
+    slug: 'ankiweaver',
+    nameKey: 'ankiWeaverTitle',
+    descKey: 'ankiWeaverDesc',
+    fullDescKey: 'ankiweaverFullDesc',
+    repoKey: 'ankiWeaverRepo',
+    techStack: ['react', 'typescript', 'python'],
+    images: media.images.ankiWeaver,
+    showLiveDemo: false,
+    liveDemoUrl: 'https://natsu-matsuri-br-sp.vercel.app/'
+  },
+
+  {
+    id: 3,
     slug: 'kanji-quiz',
     nameKey: 'project2',
     descKey: 'project2Desc',
@@ -65,7 +79,7 @@ export const projects: Project[] = [
     images: media.images.kanjiQuiz,
   },
   {
-    id: 3,
+    id: 4,
     slug: 'bookstore-system',
     nameKey: 'project3',
     descKey: 'project3Desc',
@@ -75,17 +89,19 @@ export const projects: Project[] = [
     images: media.images.bookStore,
   },
   {
-    id: 4,
-    slug: 'car-ads-system',
+    id: 5,
+    slug: 'natsu-matsuri-site',
     nameKey: 'project4',
     descKey: 'project4Desc',
     fullDescKey: 'carSystemDesc',
-    repoKey: 'carSystemRepo',
-    techStack: ['java', 'sqlite'],
-    images: media.images.carAd,
+    repoKey: 'project4Repo',
+    techStack: ['react', 'typescript'],
+    images: media.images.natsuMatsuri,
+    showLiveDemo: true,
+    liveDemoUrl: 'https://natsu-matsuri-br-sp.vercel.app/'
   },
   {
-    id: 5,
+    id: 6,
     slug: 'outlook-extractor',
     nameKey: 'project5',
     descKey: 'project5Desc',
@@ -101,13 +117,13 @@ export const projects: Project[] = [
     images: media.images.outlook,
   },
   {
-    id: 6,
+    id: 7,
     slug: 'recup-st-reader',
     nameKey: 'project6',
     descKey: 'project6Desc',
     fullDescKey: 'recupStDesc',
     repoKey: 'recupStRepo',
-    techStack: ['python', 'pyautogui', 'qt', 'json'],
+    techStack: ['python', 'qt', 'json', 'pyautogui'],
     videos: [
       {
         src: media.videos.recupSt[0],
@@ -117,7 +133,7 @@ export const projects: Project[] = [
     images: media.images.recupSt,
   },
   {
-    id: 7,
+    id: 8,
     slug: 'jp-typer',
     nameKey: 'project7',
     descKey: 'project7Desc',
@@ -127,12 +143,13 @@ export const projects: Project[] = [
     images: media.images.jpTyper,
   },
   {
-    id: 8,
+    id: 9,
     slug: 'enade-simulado',
     nameKey: 'project8',
     descKey: 'project8Desc',
     fullDescKey: 'enadeDesc',
     repoKey: 'enadeRepo',
+    showLiveDemo: true,
     liveDemoUrl: 'https://pmi-p1.vercel.app/',
     techStack: ['html', 'css', 'javascript'],
     images: media.images.enade,

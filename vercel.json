@@ -16,11 +16,6 @@
       "permanent": true
     },
     {
-      "source": "/carAdsSystem.html",
-      "destination": "/project/car-ads-system",
-      "permanent": true
-    },
-    {
       "source": "/outlookExtractor.html",
       "destination": "/project/outlook-extractor",
       "permanent": true
