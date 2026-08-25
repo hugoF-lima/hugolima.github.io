@@ -1,9 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { projects } from '../../data/projects';
 import { Slideshow } from './Slideshow';
 import { ProjectMeta } from './ProjectMeta';
+import { ProjectCaseStudy } from './ProjectCaseStudy';
+import { MediaLightbox, ShowcaseItem } from './MediaLightbox';
 import { useSurfaceBorderFlow } from '../hooks/useSurfaceBorderFlow';
 import { snapshotRect, transitionTimings, useProjectTransition } from '../transition/projectTransitionStore';
 
@@ -15,6 +17,7 @@ export const ProjectDetail: React.FC = () => {
   const { transition, syncTargetRect, settleIntoDetail, clearTransition, startReverseTransition } = useProjectTransition();
   const surfaceBorderFlowHandlers = useSurfaceBorderFlow();
   const project = projects.find(p => p.slug === slug);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useLayoutEffect(() => {
     if (!project || !detailShellRef.current) {
@@ -84,6 +87,50 @@ export const ProjectDetail: React.FC = () => {
     }, transitionTimings.reverseRouteDelay);
   };
 
+  const showcaseItems: ShowcaseItem[] = useMemo(() => {
+    if (!project.videos || project.videos.length === 0) {
+      return [];
+    }
+    return project.videos.map((video, idx) => {
+      let tabLabel: string | undefined;
+      if (project.caseStudy?.baseKey) {
+        if (idx === 0) {
+          const v = t(`${project.caseStudy.baseKey}.videos.invoiceAutomationTabLabel`, { defaultValue: '' });
+          tabLabel = v ? String(v) : undefined;
+        } else if (idx === 1) {
+          const v = t(`${project.caseStudy.baseKey}.videos.excelUpdateTabLabel`, { defaultValue: '' });
+          tabLabel = v ? String(v) : undefined;
+        }
+      }
+      const previewImage = project.images?.[(idx + 1) % Math.max(1, project.images.length)];
+      return {
+        src: video.src,
+        descKey: video.descKey,
+        tabLabel,
+        previewImage,
+      };
+    });
+  }, [project, t]);
+
+  const legacyShowcaseBody =
+    project.videos && project.videos.length > 0 ? (
+      <div className="showcase-list">
+        {project.videos.map((video, idx) => (
+          <div key={idx} className="video-container">
+            {video.descKey && (
+              <p className="video-description" style={{ whiteSpace: 'pre-line' }}>
+                {t(video.descKey)}
+              </p>
+            )}
+            <video controls className="project-showcase-video">
+              <source src={video.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ))}
+      </div>
+    ) : null;
+
   return (
     <div className="container">
       <main className="item-group project-detail-route">
@@ -117,28 +164,19 @@ export const ProjectDetail: React.FC = () => {
             </section>
           </div>
 
-          {project.videos && project.videos.length > 0 && (
-            <section
-              className="project-showcase-section project-detail-showcase surface-border-flow"
-              {...surfaceBorderFlowHandlers}
-            >
-              <h2>{t('showcase')}</h2>
-              <div className="showcase-list">
-                {project.videos.map((video, idx) => (
-                  <div key={idx} className="video-container">
-                    {video.descKey && (
-                      <p className="video-description" style={{ whiteSpace: 'pre-line' }}>
-                        {t(video.descKey)}
-                      </p>
-                    )}
-                    <video controls className="project-showcase-video">
-                      <source src={video.src} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                ))}
-              </div>
-            </section>
+          {project.caseStudy ? (
+            <ProjectCaseStudy
+              project={project}
+              showcaseItems={showcaseItems}
+              onOpenShowcase={(index) => setLightboxIndex(index)}
+            />
+          ) : (
+            legacyShowcaseBody && (
+              <section className="project-detail-showcase">
+                <h2>{t('showcase')}</h2>
+                {legacyShowcaseBody}
+              </section>
+            )
           )}
         </article>
 
@@ -148,6 +186,14 @@ export const ProjectDetail: React.FC = () => {
           </a>
         </div>
       </main>
+
+      {lightboxIndex !== null && showcaseItems.length > 0 && (
+        <MediaLightbox
+          items={showcaseItems}
+          openIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 };

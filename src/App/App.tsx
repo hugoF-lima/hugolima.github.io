@@ -10,7 +10,8 @@ import { projects } from '../data/projects';
 import { ProjectTransitionProvider, snapshotRect, transitionTimings, useProjectTransition } from './transition/projectTransitionStore';
 
 const legacyRedirects = [
-  { path: '/xmlReaderProject.html', to: '/project/xml-reader' },
+  { path: '/xmlReaderProject.html', to: '/project/invoice-automation' },
+  { path: '/project/xml-reader', to: '/project/invoice-automation' },
   { path: '/kanjiQuizProject.html', to: '/project/kanji-quiz' },
   { path: '/bookStoreSystem.html', to: '/project/bookstore-system' },
   { path: '/carAdsSystem.html', to: '/project/car-ads-system' },

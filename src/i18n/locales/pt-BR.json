@@ -2,68 +2,120 @@
   "name": "Hugo Lima",
   "introduction": "Só mais um entusiasta de T.I com um misto de autodidatismo e formação técnica. Abaixo seguem meus projetos, fiquem a vontade para explorar ou tirar dúvidas.",
   "moreInfo": "( Veja mais sobre meu perfil! )",
-  "project1": "Automação de Processamento de NF's",
-  "project1Desc": "Um leitor de XML com emissão automatizada de notas, gerência em Excel e mais...",
-  "project2": "Kanji Quiz",
-  "project2Desc": "Para os entusiastas da lingua japonesa. Um quiz que agrupa os kanjis de acordo com a estrutura JLPT.",
-  "ankiWeaverTitle": "AnkiWeaver",
-  "ankiWeaverDesc": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques",
-  "ankiweaverFullDesc": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques. Originalmente meu trabalho de graduação entregue para a Fatec no curso de Análise e Desenvolvimento de Sistemas",
-  "ankiWeaverRepo": "https://github.com/hugoF-lima/AnkiWeaver",
-  "project3": "Sistema Livraria",
-  "project3Desc": "Um sistema de livraria para gerenciar cadastro/atualização/exclusão de clientes, funcionários e fornecedores, assim como visualização do 'Fale conosco' de uma pagina web.",
-  "project4": "Natsu Matsuri BR SP",
-  "project4Desc": "Um projeto voluntariado para a Asebex com a finalidade de divulgar o Natsu Matsuri Brasil, um evento inspirado no festival japonês com o mesmo nome.",
-  "project4Repo": "https://github.com/hugoF-lima/natsu-matsuri-br-sp",
-  "project5": "Outlook Extractor",
-  "project5Desc": "Um extrator para arquivos .msg do Outlook. Foi usado para extrair arquivos pdf e xml.",
-  "project6": "Recup ST Reader",
-  "project6Desc": "Ferramenta de automação para preenchimento de dados de notas fiscais.",
-  "project7": "JP Typer",
-  "project7Desc": "Outra ferramenta para entusiastas da lingua japonesa. A finalidade é treinar digitação em japonês e memorizar jukugo. Ainda está em andamento e, um sistema de repetição espaçada segue em desenvolvimento.",
-  "project8": "Simulado Enade",
-  "project8Desc": "Um Projeto Web a qual contem um simulado de um teste conhecido, o 'teste Enade' ",
-  "identifiedProb":"Problema Identificado: ",
-  "solution":"Solução: ",
-  "limitations": "Limitações: ",
-  "results": "Resultados: ",
-  "xmlReaderTitle": "Automação de Processamento de NF's",
-  "xmlReaderDesc": "Um projeto RPA desenvolvido em Python consistindo na automação de emissão de notas fiscais e gerência de relatórios Excel em um fluxo logístico RFID. O sistema era alimentado por notas fiscais (arquivos XML) e a inserção de dados no ERP ocorria programaticamente.",
-  "xmlReaderProb" :"O fluxo de emissão de notas fiscais era completamente manual, dependendo de inserções manuais e repetitivas. O processo consumia tempo, era passível de erros e poderia ocasionar atrasos em operações de supply chain.",
-  "xmlReaderSolution": "Foi desenvolvido um fluxo RPA em Python o qual:",
-  "xmlReaderSolBOne": "Fazia leitura em massa de arquivos XML extraindo os campos relevantes.",
-  "xmlReaderSolBTwo": "Realizava interação com ERP assumindo controle do mouse e do teclado.",
-  "xmlReaderSolBThree": "Atualizava Relatório Excel após as emissões.",
-  "xmlReaderSolBFour": "Fazia algumas checagens de validação para impedir emissões incorretas.",
-  "xmlReaderResBOne": "Aumento de 30 notas fiscais por hora para 100 notas fiscais por hora.",
-  "xmlReaderResBTwo": "Ganho de tempo em aproximadamente 70%",
-  "xmlReaderResBThree": "Redução de processos manuais durante emissão de notas",
-  "xmlReaderResBFour": "Atualização das colunas do controle de notas Excel com um clique",
-  "xmlReaderLimitations": "O ERP em específico não possuia API ou integrações diretas, 'automação externa' via GUI. Gargalos nativos da aplicação e responsividade também limitavam a taxa de velocidade das emissões. O escopo da ferramenta ainda requer interação do usuário para executar as rotinas de emissão.",
-  "xmlReaderRepo": "https://github.com/hugoF-lima/local_xml_reader/",
-  "xmlReaderVid": "Abaixo segue como a tarefa de emissão automática ocorreu: \n\n -Se o usuário selecionasse um emissor não correspondente à janela, um erro apareceria (E os passos para selecionar o emissor correto). \n\n -A emissão em seguida lia os campos presentes em cada XML e realizava o preenchimento nas áreas da janela do emissor. \n\n -O único motivo a qual a tarefa automatizada não era mais rápido foi devido as oscilações do emissor, logo um intervalo adequado foi definido durante o desenvolvimento.",
-  "xmlReaderVidThree": "\n - Abaixo como ocorria a inserção no Excel:",
-  "kanjiQuizDesc": "Para aqueles interessados em memorização de Kanji (Sim, isso é possível e o cérebro humano acostuma). É dividido conforme o esquema JLPT, E no final de cada sessão, uma porcentagem de acertos é mostrada. Múltiplas escolhas sempre são sorteadas. \n\n Pendente: Implementar ordem não linear de aparecimento dos kanjis (ordem atual é fixa)",
-  "kanjiQuizRepo": "https://github.com/hugoF-lima/tkinter_kanji_quiz/",
-  "bookStoreTitle": "Sistema Livraria",
-  "bookStoreDesc": "O mais completo desses projetos. Originalmente foi o 'TCC' do curso técnico de informática que fiz em 2015. Se tratava de Criar, Ler, Atualizar e Excluir (Exclusão lógica) registros para uma Livraria, partindo de clientes e funcionários para to fornecedores e os livros em si.",
-  "bookStoreRepo": "https://github.com/hugoF-lima/book_store_system",
-  "carSystemTitle": "Sistema de Anúncio de Carros (Em Progresso)",
-  "carSystemDesc": "Uma revisita em Java. Este projeto ainda está em andamento, e até o momento exibe uma janela que permite o cadastro de automóvel para venda em uma base de dados SQLITE. A front end para visualizar os anúncios ainda segue em andamento.",
-  "carSystemRepo": "https://github.com/hugoF-lima/car_ads_system",
-  "outlookTitle": "Extrator Outlook",
-  "outlookDesc": "Um extrator para arquivos .msg que o Outlook gera quando o usuário arrasta os anexos para uma janela do Explorador. Foi usado para extrair arquivos pdf e xml, mas a fonte permite múltiplos formatos.",
-  "outlookRepo": "https://github.com/hugoF-lima/outlook_extractor",
-  "outlookVid": "Abaixo segue como ocorria a extração dos arquivos msg: \n\n Os anexos podiam ser selecionados e extraídos de uma única vez, sem a necessidade de ir abrindo os anexos um a um.",
-  "recupStTitle": "Recup ST Automate",
-  "recupStDesc": "Outra ferramenta de automação, Dessa vez lendo um arquivo objeto .json em uma janela, e automatizando a atualização de registros no emissor de notas (Que até o momento ocorria manualmente).",
-  "recupStRepo": "https://github.com/hugoF-lima/recup_st_reader",
-  "recupStVid": "Abaixo segue como a automação ocorria. \n\n A lógica interna permitia que valores selecionados no emissor fossem automaticamente referenciados no .json, independente da ordem. \n\n -Por volta de 400 notas com 15 itens cada, podiam ser feitas semanalmente",
-  "jpTyperDesc": "Meu primeiro projeto com Pyqt5 (pyside2 mais especificamente). Para aqueles aprendendo a lingua japonesa praticarem digitação e memorizar jukugo (com ou sem consulta ao hiragana). Um placar é mantido entre quantos acertos ocorrem com ou sem consulta aos hiraganas.",
-  "jpTyperRepo": "https://github.com/hugoF-lima/pyside2_jp_typer/",
-  "enadeSimuladoTitle": "Simulado Enade",
-  "enadeDesc": "Trabalho originalmente feito em grupo para a materia de Programação Web no primeiro ciclo de ADS. Feito puramente com HTML, CSS e JS. \n\n Além de mim, creditos para Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) e os demais integrantes. \n\n O simulado pode ser acessado aqui: https://pmi-p1.vercel.app/",
-  "enadeRepo": "https://github.com/hugoF-lima/PMI-P1/tree/main",
+
+  "projects": {
+    "invoiceAutomation": {
+      "title": "Automação de Processamento de NF's",
+      "description": "Um leitor de XML com emissão automatizada de notas, gerência em Excel e mais...",
+      "fullDescription": "Um projeto RPA desenvolvido em Python consistindo na automação de emissão de notas fiscais e gerência de relatórios Excel em um fluxo logístico RFID. O sistema era alimentado por notas fiscais (arquivos XML) e a inserção de dados no ERP ocorria programaticamente.",
+      "problem": {
+        "title": "Problema Identificado:",
+        "description": "O fluxo de emissão de notas fiscais era completamente manual, dependendo de inserções manuais e repetitivas. O processo consumia tempo, era passível de erros e poderia ocasionar atrasos em operações de supply chain."
+      },
+      "solution": {
+        "title": "Solução:",
+        "description": "Foi desenvolvido um fluxo RPA em Python o qual:",
+        "items": [
+          "Fazia leitura em massa de arquivos XML extraindo os campos relevantes.",
+          "Realizava interação com ERP assumindo controle do mouse e do teclado.",
+          "Atualizava Relatório Excel após as emissões.",
+          "Fazia algumas checagens de validação para impedir emissões incorretas."
+        ]
+      },
+      "technologies": {
+        "title": "Tecnologias Utilizadas"
+      },
+      "results": {
+        "title": "Resultados",
+        "metrics": [
+          { "label": "+233%", "sublabel": "Vazão de 30 → 100 NF/hora" },
+          { "label": "−70%", "sublabel": "redução no tempo de processamento" }
+        ],
+        "items": [
+          "Redução de processos manuais repetitivos durante a emissão de notas.",
+          "Padronização do relatório de notas com atualização no Excel em um clique."
+        ]
+      },
+      "limitations": {
+        "title": "Limitações:",
+        "description": "O ERP em específico não possuia API ou integrações diretas, necessitando uma 'automação externa' via GUI. Gargalos nativos da aplicação e responsividade também limitavam a taxa de velocidade das emissões. O escopo da ferramenta ainda requer interação do usuário para executar as rotinas de emissão."
+      },
+      "repository": "https://github.com/hugoF-lima/local_xml_reader/",
+      "videos": {
+        "invoiceAutomationTabLabel": "Demo GUI",
+        "excelUpdateTabLabel": "Inserção Excel",
+        "invoiceAutomation": "Abaixo segue como a tarefa de emissão automática ocorreu:\n\n-Se o usuário selecionasse um emissor não correspondente à janela, um erro apareceria (E os passos para selecionar o emissor correto).\n\n-A emissão em seguida lia os campos presentes em cada XML e realizava o preenchimento nas áreas da janela do emissor.\n\n-O único motivo a qual a tarefa automatizada não era mais rápido foi devido as oscilações do emissor, logo um intervalo adequado foi definido durante o desenvolvimento.",
+        "excelUpdate": "\n- Abaixo como ocorria a inserção no Excel:"
+      }
+    },
+
+    "kanjiQuiz": {
+      "title": "Kanji Quiz",
+      "description": "Para os entusiastas da lingua japonesa. Um quiz que agrupa os kanjis de acordo com a estrutura JLPT.",
+      "fullDescription": "Para aqueles interessados em memorização de Kanji (Sim, isso é possível e o cérebro humano acostuma). É dividido conforme o esquema JLPT, E no final de cada sessão, uma porcentagem de acertos é mostrada. Múltiplas escolhas sempre são sorteadas.\n\nPendente: Implementar ordem não linear de aparecimento dos kanjis (ordem atual é fixa)",
+      "repository": "https://github.com/hugoF-lima/tkinter_kanji_quiz/"
+    },
+
+    "ankiWeaver": {
+      "title": "AnkiWeaver",
+      "description": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques.",
+      "fullDescription": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques. Originalmente meu trabalho de graduação entregue para a Fatec no curso de Análise e Desenvolvimento de Sistemas.",
+      "repository": "https://github.com/hugoF-lima/AnkiWeaver"
+    },
+
+    "bookStore": {
+      "title": "Sistema Livraria",
+      "description": "Um sistema de livraria para gerenciar cadastro/atualização/exclusão de clientes, funcionários e fornecedores, assim como visualização do 'Fale conosco' de uma pagina web.",
+      "fullDescription": "O mais completo desses projetos. Originalmente foi o 'TCC' do curso técnico de informática que fiz em 2015. Se tratava de Criar, Ler, Atualizar e Excluir (Exclusão lógica) registros para uma Livraria, partindo de clientes e funcionários para to fornecedores e os livros em si.",
+      "repository": "https://github.com/hugoF-lima/book_store_system"
+    },
+
+    "natsuMatsuri": {
+      "title": "Natsu Matsuri BR SP",
+      "description": "Um projeto voluntariado para a Asebex com a finalidade de divulgar o Natsu Matsuri Brasil, um evento inspirado no festival japonês com o mesmo nome.",
+      "repository": "https://github.com/hugoF-lima/natsu-matsuri-br-sp"
+    },
+
+    "outlookExtractor": {
+      "title": "Extrator Outlook",
+      "description": "Um extrator para arquivos .msg do Outlook. Foi usado para extrair arquivos pdf e xml.",
+      "fullDescription": "Um extrator para arquivos .msg que o Outlook gera quando o usuário arrasta os anexos para uma janela do Explorador. Foi usado para extrair arquivos pdf e xml, mas a fonte permite múltiplos formatos.",
+      "repository": "https://github.com/hugoF-lima/outlook_extractor",
+      "videos": {
+        "extraction": "Abaixo segue como ocorria a extração dos arquivos msg:\n\nOs anexos podiam ser selecionados e extraídos de uma única vez, sem a necessidade de ir abrindo os anexos um a um."
+      }
+    },
+
+    "recupSt": {
+      "title": "Recup ST Automate",
+      "description": "Ferramenta de automação para preenchimento de dados de notas fiscais.",
+      "fullDescription": "Outra ferramenta de automação, Dessa vez lendo um arquivo objeto .json em uma janela, e automatizando a atualização de registros no emissor de notas (Que até o momento ocorria manualmente).",
+      "repository": "https://github.com/hugoF-lima/recup_st_reader",
+      "videos": {
+        "automation": "Abaixo segue como a automação ocorria.\n\nA lógica interna permitia que valores selecionados no emissor fossem automaticamente referenciados no .json, independente da ordem.\n\n-Por volta de 400 notas com 15 itens cada, podiam ser feitas semanalmente"
+      }
+    },
+
+    "jpTyper": {
+      "title": "JP Typer",
+      "description": "Outra ferramenta para entusiastas da lingua japonesa. A finalidade é treinar digitação em japonês e memorizar jukugo. Ainda está em andamento e, um sistema de repetição espaçada segue em desenvolvimento.",
+      "fullDescription": "Meu primeiro projeto com Pyqt5 (pyside2 mais especificamente). Para aqueles aprendendo a lingua japonesa praticarem digitação e memorizar jukugo (com ou sem consulta ao hiragana). Um placar é mantido entre quantos acertos ocorrem com ou sem consulta aos hiraganas.",
+      "repository": "https://github.com/hugoF-lima/pyside2_jp_typer/"
+    },
+
+    "enadeMockup": {
+      "title": "Simulado Enade",
+      "description": "Um Projeto Web a qual contem um simulado de um teste conhecido, o 'teste Enade'.",
+      "details": "Trabalho originalmente feito em grupo para a materia de Programação Web no primeiro ciclo de ADS. Feito puramente com HTML, CSS e JS.\n\nAlém de mim, creditos para Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) e os demais integrantes.\n\nO simulado pode ser acessado aqui: https://pmi-p1.vercel.app/",
+      "repository": "https://github.com/hugoF-lima/PMI-P1/tree/main"
+    },
+
+    "carSystem": {
+      "title": "Sistema de Anúncio de Carros (Em Progresso)",
+      "description": "Uma revisita em Java. Este projeto ainda está em andamento, e até o momento exibe uma janela que permite o cadastro de automóvel para venda em uma base de dados SQLITE. A front end para visualizar os anúncios ainda segue em andamento."
+    }
+  },
+
   "showcase": "Demonstração:",
   "techStack": "Tecnologias",
   "languageMenu": "Idioma",
@@ -72,15 +124,19 @@
   "downloadResume": "Baixar currículo",
   "watchPitch": "Veja meu pitch de 30s",
   "enableVideoControls": "Clique para habilitar os controles do vídeo",
+
   "aboutMeTitle": "Sobre mim",
   "aboutMeTitleTwo": "Overview",
   "aboutMe": "Hugo Freitas F. Lima, Tenho 27 anos e sou um individuo de formação tecnica e aprendizado autodidata na área da computação. Recentemente estou cursando Análise e Desenvolvimento de Sistemas na Fatec.\nEu comecei na programação como a maioria, através do ensino tecnico, Inicialmente fui introduzido á linguagem C, porem meu envolvimento apenas decolou quando fui aprendendo Java e SQL com a finalidade de construir um sistema de Cadastro e Vendas de uma livraria. No sistema se gerenciavam clientes, funcionários, fornecedores, livros e até mesmo o \"fale conosco\" de uma interface web.\nApesar de um hiato, anos mais tarde retornei a programação, dessa vez em uma dinâmica autodidata. Aprendi Python e, depois de tutoriais sem fim, decidi \"aprender na prática\" através de um conjunto de projetos que cativaram minha iniciativa. A maioria dos projetos aqui presentes envolvem automação de tarefas e facilidade ao usuário.\nAdquiri o habito de aprender uma terceira lingua (japonês), e como resultado, alguns projetos abrangem essa iniciativa.",
+
   "myWork": "Algumas pessoas me perguntam como consigo criar por conta, sempre as digo que habito é a chave de qualquer avanço, e que orientação á objetos é em sua essência, o ato de construir e incrementar em cima de \"receitas de bolo\". (Tenho ciência de que bons desenvolvedores evitam reciclar código, e com isso em mente, um dos meus futuros objetivos é melhor compreender algoritmos).\nA maioria do meu trabalho ainda segue em progresso, você pode conferir aqui!",
+
   "contactMe": "Email profissional: hugolima720@protonmail.com\nEmail de colégio: hugo.lima7@fatec.sp.gov.br\nGithub: https://github.com/hugoF-lima\nLinkedin profile: https://www.linkedin.com/in/hugo-lima-240ab6209/",
   "contactMeHeaderTwo": "Contato!",
   "myWorkHeaderTwo": "Meu trabalho",
   "thanksToHeaderTwo": "Agradecimentos...",
   "thanksTo": "Gostaria de agradecer aos meus colegas de universidade por me encorajarem a produzir esse portfolio, Apesar da minha modestia,\nEles me disseram que assim seria uma melhor maneira de permitir que os profissionais do mercado conheçam meu trabalho.",
+
   "backToHome": "Voltar para Início",
   "footernote": "© 2026 Hugo Lima. Todos direitos reservados."
 }
