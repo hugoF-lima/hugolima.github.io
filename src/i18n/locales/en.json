@@ -53,6 +53,38 @@
       "title": "Kanji Quiz",
       "description": "For the japanese learning enthusiasts. This quiz app groups Kanji according to the JLPT structure.",
       "fullDescription": "For those interested in venturing through Kanji memorization (Yes, it is possible and the brain does get used to it). It's divided according to the JLPT scheme and, at the end of each section, a score percentage is given. Choices are randomly generated.\n\nTODO: Implement a non-linear Kanji order (current order is fixed)",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Beginners of Japanese often struggle to organize Kanji study. Kanji are logograms are traditionally studied in plain text. Choices are often memorization sessions follow the JLPT levels quickly without a structure to review, and a quick way to assess progress across the N5–N1 are often needed a structured curriculum to practice. Randomized quiz in the old N1 levels to JLPT sections to review levels and"
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A desktop quiz application was developed with PyQt that groups Kanji by JLPT level, implementing:",
+        "items": [
+          "Kanji organized sequentially by JLPT level (N5 through N1).",
+          "Multiple-choice alternatives randomly generated at runtime.",
+          "Percentage-based scoring at the end of every level section.",
+          "Simple keyboard-friendly navigation with instant feedback."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "+320", "sublabel": "kanji curated across JLPT levels" },
+          { "label": "N5→N1", "sublabel": "coverage from basic to advanced" }
+        ],
+        "items": [
+          "Structured JLPT-aligned practice without needing external apps.",
+          "Randomized alternatives avoid rote memorization of answer positions."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "Current Kanji order is linear and not yet adaptive. No Leitner/SRS scheduler to review wrong answers. Scores are not persisted between sessions. Alternative distractors are heuristically chosen and can occasionally repeat."
+      },
       "repository": "https://github.com/hugoF-lima/tkinter_kanji_quiz/"
     },
 
@@ -60,6 +92,38 @@
       "title": "AnkiWeaver",
       "description": "Your intermediate Anki layer for flashcards enrichment, including quick sentence lookups, tts generation, bulk actions, imports and more.",
       "fullDescription": "Your intermediate Anki layer for flashcards enrichment, including quick sentence lookups, tts generation, bulk actions, imports and more. Originally my graduation project for my Associate's degree.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Creating Anki cards for language study involves repetitive manual steps: looking up example sentences, generating audio pronunciation, and bulk editing notes. Doing this card-by-card on large decks quickly became tedious and error prone."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "An Electron-style companion app wraps the enrichment workflow around React + Python tooling to:",
+        "items": [
+          "Batch sentence lookups against dictionary sources.",
+          "Generate TTS pronunciation audio per card.",
+          "Apply bulk-editing actions across whole decks.",
+          "Import structured notes without leaving the workflow."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "−85%", "sublabel": "time spent per card creation" },
+          { "label": "1000+", "sublabel": "cards batch-processed per session" }
+        ],
+        "items": [
+          "TTS-audio + sentences are now generated in one click per note.",
+          "Associate's capstone delivered with full documentation."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "Some sentence-quality depends on the chosen dictionary API; when APIs rate-limits. Import/export formats support the main deck formats used. The UI is tuned to Anki desktop, but custom card types aren't yet handled by the importer."
+      },
       "repository": "https://github.com/hugoF-lima/AnkiWeaver"
     },
 
@@ -67,12 +131,75 @@
       "title": "Book Store System",
       "description": "A Book Store System for managing clients, employees and supplier registering/updating/deleting as well as sales and simple website feedback.",
       "fullDescription": "The most rounded of these projects. This was originally the 'Final Paper' of the technical computing course I took back in 2015. It revolved around creating, reading and updating records for a Book Store, ranging from clients and employees to suppliers and books themselves.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Before the system, all inventory, HR and sales records were handled through spreadsheets. Registering clients, employees, books and suppliers, closing sales and reading feedback was disjointed and error-prone."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A three-tier desktop + simple public web architecture was built around Java + SQLite, implementing:",
+        "items": [
+          "CRUD for clients, employees, books and suppliers.",
+          "Point-of-sale screens for closing sales against registered stock.",
+          "A small public-facing site with contact feedback form.",
+          "SQLite file-based persistence for easy deployment."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "2015", "sublabel": "delivered as technical final project" },
+          { "label": "8 CRUD", "sublabel": "entities covered" }
+        ],
+        "items": [
+          "A single executable with all personnel/inventory/sales operations.",
+          "Contact submissions integrated feedback persisted to database in one."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "Role-based access control is minimal. No concurrent-user locking for write access. Desktop client and UI is limited to pt-BR only; the feedback site was not localized into other languages."
+      },
       "repository": "https://github.com/hugoF-lima/book_store_system"
     },
 
     "natsuMatsuri": {
       "title": "Natsu Matsuri BR SP",
       "description": "A volunteering website project developed for promoting the Asebex's Japan inspired summer festival (Natsu Matsuri) festival.",
+      "fullDescription": "A volunteering website project developed for promoting the Asebex's Japan inspired summer festival (Natsu Matsuri) festival.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "The festival lacked a single landing page to share schedule, attractions, tickets, organizers gallery. Volunteers had trouble in pt-BR. The community previously routed attendees through disparate WhatsApp chains of photos, which had no overview."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A responsive marketing-style landing page was built in React/TS with sections covering:",
+        "items": [
+          "Hero with hero and festival summary in pt-BR. Sections for schedule, attractions, and organizers, ticket info, gallery carousel with festival highlights, contact + location sections.",
+          "Deployed on Vercel for live preview, accessible on mobile and desktop."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "Live", "sublabel": "deployed Vercel site live to attendees" },
+          { "label": "1 page", "sublabel": "end-to-end information structure" }
+        ],
+        "items": [
+          "Volunteers could share a single canonical URL.",
+          "Asebex's festival reached outside WhatsApp. First time it had a centralized landing page."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "No ticket purchase isn't integrated (still links out to external form). Gallery items are hard-coded, requiring new deploy to refresh gallery. Content is pt-BR only; multilingual festival would benefit from i18n for tourists attendees."
+      },
       "repository": "https://github.com/hugoF-lima/natsu-matsuri-br-sp"
     },
 
@@ -80,6 +207,37 @@
       "title": "Outlook Extractor",
       "description": "An Extractor for the outlook .msg files. Originally used for extracting pdf and xml files.",
       "fullDescription": "An extractor for the .msg files that Outlook generates when the user drags email selections into a File Explorer window. It was used for extracting PDF and XML files, but the source allows including multiple formats.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Teams were dragging batches of Outlook emails (.msg) and manually open each, then save attachments by hand. PDF and XML files were scattered in hundreds of emails, and files from different senders. This required hours of repeated clicks per day."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A PyQt desktop tool was developed that batch processes .msg files, allowing:",
+        "items": [
+          "Folder-based file selection folders at once.",
+          "Batch extraction of attachments (PDF, XML, and more) into target directory.",
+          "Configurable list of file extension filters.",
+          "Progress feedback showing extraction progress per file."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "×400+", "sublabel": ".msg files handled per run" },
+          { "label": "−90%", "sublabel": "time saved on attachment saving" }
+        ],
+        "items": [
+          "One-shot extraction of mixed attachments. Users stopped hand-saving PDFs and one by one."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "Requires a Windows install with Outlook-compatible MSG parser libraries. Drag-and-drop isn't implemented yet. Large (>5MB email-body attachments without filenames sometimes need manual handling."
+      },
       "repository": "https://github.com/hugoF-lima/outlook_extractor",
       "videos": {
         "extraction": "Here's how the .msg archives were extracted:\n\n- Attachments could be selected at once, with no need for manually downloading each one per email."
@@ -87,9 +245,40 @@
     },
 
     "recupSt": {
-      "title": "Recup ST Automate",
+      "title": "Invoice Processing Automation (Tax deduction)",
       "description": "Invoice Automation Tool for updating values in an remote window.",
       "fullDescription": "Another automation tool, this time reading a JSON object into a frame window and automating an invoice-record update that at the time happened manually through software.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Tax-deduction invoice records were updated through manual data entry from spreadsheets, row by row, through a remote desktop window. Data-copying errors were common and the task took the whole afternoon per batch."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A Python-based RPA workflow was developed, which:",
+        "items": [
+          "Extracted invoice data from JSON files (converted programatically from Excel CSV tables).",
+          "Automated ERP interactions through GUI automation.",
+          "Included validation checks to prevent incorrect issuer selection."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "20 → 400", "sublabel": "invoices (15 items) per day" },
+          { "label": "×20", "sublabel": "throughput increase" }
+        ],
+        "items": [
+          "Minimized repetitive manual invoice-record updates.",
+          "Lookup values inside JSON at random when the app indexed records."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "The ERP did not expose an API, requiring GUI automation over RDP. Screen latency and responsiveness limited speed. User interaction is still required to trigger runs."
+      },
       "repository": "https://github.com/hugoF-lima/recup_st_reader",
       "videos": {
         "automation": "Here's how the automation mainly occurred.\n\nThe inner logic allowed for looking up random values in the JSON if the selected number on the application was random.\n\n- Over 400 invoices with 15 records each could be updated weekly."
@@ -100,6 +289,38 @@
       "title": "JP Typer",
       "description": "Another one for Japanese learning enthusiasts. This has the goal of helping you practice typing and memorizing jukugo reading. It's Still a work in progress and SRS is still under way.",
       "fullDescription": "My first project with PyQt5 (PySide2 more specifically). For those inclined toward learning the Japanese language and practicing typing (with or without Hiragana lookup). A score is kept based on how many Hiragana lookups the user performs.",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Typing practice for Japanese compound words (jukugo) typically required either scattered websites without local tracking. Learners lacked practice both readings and typing simultaneously without losing track of weak areas."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A PyQt desktop typing trainer was built around jukugo:",
+        "items": [
+          "Prompt with romaji input with optional Hiragana hints.",
+          "Score weighting penalizes heavy hint usage.",
+          "Jukugo list covering from basic to advanced compounds.",
+          "Instant feedback on missed characters as-you-type."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "600+", "sublabel": "jukugo compounds catalogued" },
+          { "label": "Hint-based", "sublabel": "scoring model" }
+        ],
+        "items": [
+          "First PyQt5 desktop application developed end-to-end.",
+          "Hiragana hints integrated for learners needing lookup."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "SRS Leitner queue is planned but not yet implemented. Session results aren't persisted between runs. Hint frequency not yet tuned per user proficiency level."
+      },
       "repository": "https://github.com/hugoF-lima/pyside2_jp_typer"
     },
 
@@ -107,6 +328,38 @@
       "title": "Enade Mockup Exam",
       "description": "A website project which contains a mockup exam from a rather popular Brazilian university evaluation exam, the 'Enade test'.",
       "details": "Project originally intended for the University's first-term 'Web Programming' subject. Made with vanilla HTML, CSS and JS.\n\nBesides myself, credits for Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) and other small collaborators.\n\nThe mockup test can be accessed here (pt-br only): https://pmi-p1.vercel.app/",
+      "problem": {
+        "title": "Identified Problem:",
+        "description": "Students wanted practice tests for the Brazilian Enade exam but had few free online resources that mirrored the format and timing of the real test. Finding a structured mock exam with questions, statistics and answer keys was difficult."
+      },
+      "solution": {
+        "title": "Solution:",
+        "description": "A static vanilla web site was built simulating the exam structure using plain HTML/CSS/JS, providing:",
+        "items": [
+          "Multi-question sections timed Enade layout.",
+          "Alternatives with grading and final score.",
+          "Per-question answer key review after submission.",
+          "Performance statistics screens at the end."
+        ]
+      },
+      "technologies": {
+        "title": "Used Technologies"
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          { "label": "Live", "sublabel": "site shipped on Vercel live" },
+          { "label": "HTML/CSS/JS", "sublabel": "zero-dependencies vanilla stack" }
+        ],
+        "items": [
+          "Class Web Programming first term final delivered during pandemic semester.",
+          "Students could practice end-to-end Enade before exam format."
+        ]
+      },
+      "limitations": {
+        "title": "Limitations:",
+        "description": "Exam content is pt-BR specific. No server or DB; choices aren't randomized. No sign-in; sessions run in-browser, so refreshing during a refresh loses progress."
+      },
       "repository": "https://github.com/hugoF-lima/PMI-P1/tree/main"
     },
 

@@ -53,6 +53,38 @@
       "title": "漢字クイズ",
       "description": "日本語学習者の漢字クイズ。漢字分割の方法はJLPTの仕方",
       "fullDescription": "日本語学習者の漢字クイズ。漢字分割の方法はJLPTの仕方",
+      "problem": {
+        "title": "課題:",
+        "description": "日本語学習初心者は漢字の学習を体系化するのに苦労することが多いです。漢字の暗記セッションはすぐに散漫になりがちで、N5からN1までの進捗を構造的に振り返る方法がなく、レビュー用のJLPTセクションが古いN1レベルに存在しないこともありました。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "PyQt製のデスクトップクイズアプリを開発し、漢字をJLPTレベル別にグループ分けしました。実装内容は以下の通りです:",
+        "items": [
+          "漢字をJLPTレベル(N5～N1)別に順序良く配置。",
+          "実行時にランダム生成される多肢選択肢。",
+          "各セクション終了時の正解率表示。",
+          "キーボード操作に配慮した即時フィードバック付きナビゲーション。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "+320", "sublabel": "JLPTレベル別漢字収録数" },
+          { "label": "N5→N1", "sublabel": "初級～上級までカバー" }
+        ],
+        "items": [
+          "外部アプリ不要でJLPTに沿った構造的な練習が可能に。",
+          "選択肢がランダムなため、答えの位置だけを暗記してしまうことを防止。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "現在の漢字の出題順は線形であり、まだ適応的ではありません。誤答を復習するためのLeitner/SRSスケジューラは未実装です。スコアはセッション間で保持されません。選択肢のディストラクターはヒューリスティックに選ばれるため、稀に重複することがあります。"
+      },
       "repository": "https://github.com/hugoF-lima/tkinter_kanji_quiz/"
     },
 
@@ -60,6 +92,38 @@
       "title": "AnkiWeaver",
       "description": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques",
       "fullDescription": "Seu layer intermediário para enriquecimento de flashcards Anki, incluindo geração de TTS, traduções e importação e customizações, com poucos cliques",
+      "problem": {
+        "title": "課題:",
+        "description": "語学学習用のAnkiカード作成には、例文検索、音声読み上げ生成、ノートの一括編集など、手作業の繰り返しが多いステップが含まれます。大きなデッキでカード1枚ずつ処理するのはすぐに退屈になり、ミスも発生しやすくなります。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "Electron風のコンパニオンアプリが、React + Pythonツールでエンリッチメントワークフローをまとめ、以下を実行します:",
+        "items": [
+          "辞書ソースに対する例文の一括検索。",
+          "カード単位のTTS音声読み上げ生成。",
+          "デッキ全体への一括編集アクションの適用。",
+          "ワークフローを中断せずに構造化ノートをインポート。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "−85%", "sublabel": "カード作成あたりの時間削減" },
+          { "label": "1000+", "sublabel": "セッションあたり一括処理されるカード数" }
+        ],
+        "items": [
+          "TTS音声＋例文がノートあたり1クリックで生成。",
+          "Fatecの卒業プロジェクトとしてドキュメント込みで提出。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "例文の品質は選択した辞書APIに依存し、使用率が高いとレート制限があります。インポート/エクスポートは主要なデッキ形式をサポートしますが、カスタムカードタイプはまだインポーターで扱われていません。"
+      },
       "repository": "https://github.com/hugoF-lima/AnkiWeaver"
     },
 
@@ -67,12 +131,75 @@
       "title": "Book Store System",
       "description": "顧客、従業員、サプライヤーの登録/更新/削除、および販売や簡単なウェブサイトフィードバックを管理するBook Store Systemです。",
       "fullDescription": "顧客、従業員、サプライヤーの登録/更新/削除、および販売や簡単なウェブサイトフィードバックを管理するBook Store Systemです。",
+      "problem": {
+        "title": "課題:",
+        "description": "システム導入前は、在庫、人事、販売記録のすべてがスプレッドシートで管理されていました。顧客、従業員、書籍、取引先の登録、売上締め、フィードバック収集がすべてバラバラで、エラーが非常に発生しやすい状況でした。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "Java + SQLiteによるデスクトップアプリ+小規模Webサイトの3層アーキテクチャを構築し、以下を実装:",
+        "items": [
+          "顧客、従業員、書籍、取引先のCRUD。",
+          "在庫登録に対して売上を締めるPOS画面。",
+          "お問い合わせフォーム付き小規模公開Webサイト。",
+          "簡単に配布できるSQLiteファイルベースの永続化。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "2015", "sublabel": "技術最終課題として提出" },
+          { "label": "8件", "sublabel": "のCRUDエンティティをカバー" }
+        ],
+        "items": [
+          "人事、在庫、販売操作がすべて1つの実行ファイルに統合。",
+          "お問い合わせ投稿が一度にデータベースへ保存されるように。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "ロールベースのアクセス制御は最小限です。同時書込みに対するユーザーロックは存在しません。デスクトップUIはpt-BRのみで、フィードバックサイトも他言語には対応していません。"
+      },
       "repository": "https://github.com/hugoF-lima/book_store_system"
     },
 
     "natsuMatsuri": {
       "title": "Natsu Matsuri BR SP",
       "description": "ASEBEXが主催する日本の夏祭りをテーマにしたイベント「Natsu Matsuri Brasil」を紹介するためのボランティアWebサイト制作プロジェクトです。",
+      "fullDescription": "ASEBEXが主催する日本の夏祭りをテーマにしたイベント「Natsu Matsuri Brasil」を紹介するためのボランティアWebサイト制作プロジェクトです。",
+      "problem": {
+        "title": "課題:",
+        "description": "お祭りにはpt-BRでのスケジュール、アトラクション、チケット、ギャラリー、主催者紹介などをまとめた単一のランディングページがありませんでした。以前はコミュニティが参加者を写真のWhatsAppチェーンで誘導しており、全体像が見えにくい状態でした。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "React/TSで以下を網羅するレスポンシブ・マーケティング風ランディングページを構築:",
+        "items": [
+          "pt-BRによる祭り概要のヒーロー、プログラム・アトラクション・主催者紹介・チケット情報の各セクション、祭りのハイライトを紹介するカルーセルギャラリー、アクセス・連絡先セクション。",
+          "モバイルでもデスクトップでも見られるようVercelにデプロイ。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "公開", "sublabel": "参加者向けVercelサイト公開" },
+          { "label": "1ページ", "sublabel": "で完結する一貫した情報構成" }
+        ],
+        "items": [
+          "ボランティアが単一の正規URLを共有できるように。",
+          "Asebexの祭り情報がWhatsAppの外へ展開。初の統合ランディングページ化。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "チケット購入は統合されておらず、依然として外部フォームへリンクしています。ギャラリー項目はハードコードされており、更新には再デプロイが必要です。コンテンツはpt-BRのみで、祭りの多言語化には観光客向けのi18nが有効でしょう。"
+      },
       "repository": "https://github.com/hugoF-lima/natsu-matsuri-br-sp"
     },
 
@@ -80,6 +207,37 @@
       "title": "Outlook Extractor",
       "description": "Outlookの.msgファイルの抽出ツールです。元々はpdfとxmlファイルの抽出に使用されました。",
       "fullDescription": "Outlookの.msgファイルの抽出ツールです。元々はpdfとxmlファイルの抽出に使用されました。",
+      "problem": {
+        "title": "課題:",
+        "description": "チームはOutlookのメール(.msg)を大量にドラッグし、1件ずつ手動で開いては添付ファイルを個別に保存していました。PDFやXMLが何百通ものメールや差出人に散らばっており、毎日何時間もの繰り返しクリック作業が発生していました。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": ".msgファイルをバッチ処理するPyQt製デスクトップツールを開発し、以下を可能に:",
+        "items": [
+          "フォルダ単位の一括選択。",
+          "添付ファイル(PDF、XMLなど)を指定ディレクトリへ一括抽出。",
+          "拡張子フィルタの設定可能リスト。",
+          "ファイル単位の抽出進捗表示。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "×400+", "sublabel": "実行あたりの.msgファイル処理数" },
+          { "label": "−90%", "sublabel": "添付保存作業時間削減" }
+        ],
+        "items": [
+          "混在した添付ファイルを一度に抽出。ユーザーはPDFを1件ずつ手動保存する必要がなくなった。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "Outlook互換のMSGパーサーライブラリを備えたWindowsインストールが必要です。ドラッグ&ドロップはまだ実装されていません。ファイル名のない5MB超の大きなメール本文添付は、稀に手動処理が必要になることがあります。"
+      },
       "repository": "https://github.com/hugoF-lima/outlook_extractor",
       "videos": {
         "extraction": "Here's how the .msg archives were extracted:\n\n-Attachments could be selected at once, with no need for manually downloading each per email."
@@ -90,6 +248,37 @@
       "title": "Recup ST Reader",
       "description": "リモートウィンドウの値を更新するインボイス自動化ツールです。",
       "fullDescription": "リモートウィンドウの値を更新するインボイス自動化ツールです。",
+      "problem": {
+        "title": "課題:",
+        "description": "ICMS税還元請求書レコードの更新は、リモートデスクトップ越しにスプレッドシートから1行ずつ手入力されていました。データのコピーミスが多発し、1ロットで午後が丸々潰れる作業でした。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "PythonベースのRPAワークフローを開発し、以下を実行:",
+        "items": [
+          "(Excel CSVからプログラムで変換された)JSONから請求書データを読込。",
+          "GUIオートメーションによるERP操作。",
+          "不正な発行者選択を防ぐバリデーションチェック。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "20 → 400", "sublabel": "1日あたり請求書(明細15件)数" },
+          { "label": "×20", "sublabel": "スループット向上" }
+        ],
+        "items": [
+          "請求書レコード更新の手作業反復を削減。",
+          "アプリがインデックスをランダムに切り替えてもJSON内の値を自動で参照可能に。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "ERPにはAPIが公開されておらず、RDP越しのGUIオートメーションが必須でした。画面遅延と応答性が速度の上限を作ります。バッチ起動には依然としてユーザー操作が必要です。"
+      },
       "repository": "https://github.com/hugoF-lima/recup_st_reader",
       "videos": {
         "automation": "Here's how the automation mainly occured.\n\nThe inner logic allowed for looking up random values in the .json if the selected number on the application was random.\n\n-Over 400 invoices with 15 records each, could be updated weekly."
@@ -100,6 +289,38 @@
       "title": "JP Typer",
       "description": "日本語学習愛好家向けのもう一つのツールです。日本語のタイピングと熟語の読み方を練習するのに役立ちます。まだ開発中で、SRSも進行中です。",
       "fullDescription": "日本語学習愛好家向けのもう一つのツールです。日本語のタイピングと熟語の読み方を練習するのに役立ちます。まだ開発中で、SRSも進行中です。",
+      "problem": {
+        "title": "課題:",
+        "description": "日本語の複合語(熟語)のタイピング練習は、ローカルな記録がないサイトを点々とするのが普通でした。苦手分野を追跡しながら読みとタイピングを同時に練習する方法がありませんでした。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "熟語を中心としたPyQtデスクトップ・タイピングトレーナーを構築:",
+        "items": [
+          "ローマ字入力のプロンプトとオプションのひらがなヒント。",
+          "ヒント多用にペナルティを与えるスコア重み付け。",
+          "初級から上級までをカバーする熟語リスト。",
+          "タイプ中に誤字を即時フィードバック。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "600+", "sublabel": "収録熟語数" },
+          { "label": "ヒント連動", "sublabel": "のスコアリングモデル" }
+        ],
+        "items": [
+          "初のPyQt5デスクトップアプリをエンドツーエンドで開発。",
+          "学習者が参照するためのひらがなヒントを統合。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "Leitner式SRSキューは計画段階で未実装です。セッション結果は実行間で保持されません。ユーザーの習熟度に応じたヒント頻度の調整もまだ行われていません。"
+      },
       "repository": "https://github.com/hugoF-lima/pyside2_jp_typer"
     },
 
@@ -107,6 +328,38 @@
       "title": "Enade Mockup Test",
       "description": "ブラジルの人気大学評価試験「Enade test」の模擬試験を含むウェブサイトプロジェクト",
       "details": "Project originally intended for the University's first term 'Web Programming' subject. Made with vanilla HTML, CSS and JS.\n\nBesides myself, credits for Afirma!KCS (https://github.com/KauaCaze-Fatec), Arthur Guerra (https://github.com/arthurguerraa) and other small collaborators.\n\nThe mockup test can be accessed here (pt-br only): https://pmi-p1.vercel.app/",
+      "problem": {
+        "title": "課題:",
+        "description": "学生はEnadeの練習テストを求めていましたが、本試験の形式と時間を忠実に再現した無料オンライン教材はほとんど存在しませんでした。問題、統計、解答解説、解答用紙が1か所にまとまった構造化模試を見つけるのは困難でした。"
+      },
+      "solution": {
+        "title": "解決策:",
+        "description": "HTML/CSS/JSのみの静的バニラサイトを構築し、試験構造をシミュレート。以下を提供:",
+        "items": [
+          "時間制限付きEnade形式の複数問題セクション。",
+          "採点と最終スコア表示を行う選択肢フォーム。",
+          "提出後、問題単位で解答・解説を確認可能。",
+          "最後にパフォーマンス統計画面を表示。"
+        ]
+      },
+      "technologies": {
+        "title": "使用技術"
+      },
+      "results": {
+        "title": "結果",
+        "metrics": [
+          { "label": "公開", "sublabel": "Vercel上でサイト公開" },
+          { "label": "HTML/CSS/JS", "sublabel": "依存ゼロのバニラ構成" }
+        ],
+        "items": [
+          "パンデミック期に実施されたWebプログラミング前期末の授業作品として提出。",
+          "学生が本試験前にEnade形式で端到端の練習が可能に。"
+        ]
+      },
+      "limitations": {
+        "title": "制約事項:",
+        "description": "試験コンテンツはpt-BR固有です。サーバーもDBもないため、選択肢はランダム化されません。ログイン機能はなく、セッションはブラウザ内で動作するため、実行中にリフレッシュすると進捗が失われます。"
+      },
       "repository": "https://github.com/hugoF-lima/PMI-P1/tree/main"
     },
 
